@@ -1,0 +1,1022 @@
+$$device{'TX-NR525'} = {
+  '"ADQ" - Audyssey Dynamic EQ' => {
+    'Arguments' => {
+      'gets The Audyssey Dynamic EQ State' => 'QSTN',
+      'sets Audyssey Dynamic EQ Off' => '00',
+      'sets Audyssey Dynamic EQ On' => '01',
+      'sets Audyssey Dynamic EQ State Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'ADQ',
+    'Description' => 'Audyssey Dynamic EQ'
+  },
+  '"ADV" - Audyssey Dynamic Volume' => {
+    'Arguments' => {
+      'gets The Audyssey Dynamic Volume State' => 'QSTN',
+      'sets Audyssey Dynamic Volume Heavy' => '03',
+      'sets Audyssey Dynamic Volume Light' => '01',
+      'sets Audyssey Dynamic Volume Medium' => '02',
+      'sets Audyssey Dynamic Volume Off' => '00',
+      'sets Audyssey Dynamic Volume State Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'ADV',
+    'Description' => 'Audyssey Dynamic Volume'
+  },
+  '"ADY" - Audyssey 2EQ/MultEQ/MultEQ XT' => {
+    'Arguments' => {
+      'gets The Audyssey 2EQ/MultEQ/MultEQ XT State' => 'QSTN',
+      'sets Audyssey 2EQ/MultEQ/MultEQ XT Music' => '02',
+      'sets Audyssey 2EQ/MultEQ/MultEQ XT Off' => '00',
+      'sets Audyssey 2EQ/MultEQ/MultEQ XT On/Movie' => '01',
+      'sets Audyssey 2EQ/MultEQ/MultEQ XT State Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'ADY',
+    'Description' => 'Audyssey 2EQ/MultEQ/MultEQ XT'
+  },
+  '"AMT" - Audio Muting Command' => {
+    'Arguments' => {
+      'gets the Audio Muting State' => 'QSTN',
+      'sets Audio Muting Off' => '00',
+      'sets Audio Muting On' => '01',
+      'sets Audio Muting Wrap-Around' => 'TG'
+    },
+    'Command' => 'AMT',
+    'Description' => 'Audio Muting Command'
+  },
+  '"AVS" - A/V Sync' => {
+    'Arguments' => {
+      'gets A/V Sync Value' => 'QSTN',
+      'sets A/V Sync
+ s: sign ( + or - or 0)
+ If set minus value, s=-. (only HDMI Lipsync is available)
+ If set plus value, s=+
+ If set zero value, s=0
+nnn : value; If set 100msec, nnn=100' => 'snnn',
+      'sets A/V Sync is decreased (step is depend on model)' => 'DOWN',
+      'sets A/V Sync is increased (step is depend on model)' => 'UP'
+    },
+    'Command' => 'AVS',
+    'Description' => 'A/V Sync'
+  },
+  '"CDS" - Command for Docking Station via RI' => {
+    'Arguments' => {
+      'ALBUM DONW Key' => 'ALBUM-',
+      'ALBUM UP Key' => 'ALBUM+',
+      'BACKLIGHT Key' => 'BLIGHT',
+      'CHAPTER DOWN Key' => 'CHAPT-',
+      'CHAPTER UP Key' => 'CHAPT+',
+      'CURSOR DOWN Key' => 'DOWN',
+      'CUSOR UP Key' => 'UP',
+      'FF Key' => 'FF',
+      'FR Key' => 'REW',
+      'MENU Key' => 'MENU',
+      'MUTE Key' => 'MUTE',
+      'PAUSE Key' => 'PAUSE',
+      'PLAY/PAUSE Key' => 'PLY/PAU',
+      'PLAY/RESUME Key' => 'PLY/RES',
+      'PLAYLIST DOWN Key' => 'PLIST-',
+      'PLAYLIST UP Key' => 'PLIST+',
+      'REPEAT Key' => 'REPEAT',
+      'SELECT Key' => 'ENTER',
+      'SHUFFLE Key' => 'RANDOM',
+      'STOP Key' => 'STOP',
+      'TRACK DOWN Key' => 'SKIP.R',
+      'TRACK UP Key' => 'SKIP.F',
+      'sets Dock On' => 'PWRON',
+      'sets Dock Standby' => 'PWROFF'
+    },
+    'Command' => 'CDS',
+    'Description' => 'Command for Docking Station via RI'
+  },
+  '"CDV" - DVD Player Operation Command (via RIHD only after TX-NR509)' => {
+    'Arguments' => {
+      '0' => '0',
+      '1' => '1',
+      '10' => '10',
+      '2' => '2',
+      '3' => '3',
+      '4' => '4',
+      '5' => '5',
+      '6' => '6',
+      '7' => '7',
+      '8' => '8',
+      '9' => '9',
+      '>>I' => 'SKIP.F',
+      'A-B REPEAT' => 'ABR',
+      'ANGLE' => 'ANGLE',
+      'ASPECT(Toggle)' => 'ASCTG',
+      'AUDIO' => 'AUDIO',
+      'CD CHAIN REPEAT' => 'CDPCD',
+      'CLEAR' => 'CLEAR',
+      'CONDITION MEMORY' => 'CONMEM',
+      'DISC +' => 'DISC.F',
+      'DISC -' => 'DISC.R',
+      'DISC1' => 'DISC1',
+      'DISC2' => 'DISC2',
+      'DISC3' => 'DISC3',
+      'DISC4' => 'DISC4',
+      'DISC5' => 'DISC5',
+      'DISC6' => 'DISC6',
+      'DISPLAY' => 'DISP',
+      'DOWN' => 'DOWN',
+      'ENTER' => 'ENTER',
+      'FF >>' => 'FF',
+      'FOLDER DOWN' => 'FOLDDN',
+      'FOLDER UP' => 'FOLDUP',
+      'FUNCTION MEMORY' => 'FUNMEM',
+      'I<<' => 'SKIP.R',
+      'LAST PLAY' => 'LASTPLAY',
+      'LEFT' => 'LEFT',
+      'MEMORY' => 'MEMORY',
+      'MENU' => 'MENU',
+      'MULTI SPEED DOWN' => 'MSPDN',
+      'MULTI SPEED UP' => 'MSPUP',
+      'OPEN/CLOSE' => 'OP/CL',
+      'PAUSE' => 'PAUSE',
+      'PICTURE CONTROL' => 'PCT',
+      'PLAY' => 'PLAY',
+      'PLAY MODE' => 'P.MODE',
+      'POWER OFF' => 'PWROFF',
+      'POWER ON' => 'PWRON',
+      'POWER ON/OFF' => 'POWER',
+      'PROGRESSIVE' => 'PROGRE',
+      'RANDOM' => 'RANDOM',
+      'REPEAT' => 'REPEAT',
+      'RESOLUTION(Toggle)' => 'RSCTG',
+      'RETURN' => 'RETURN',
+      'REW <<' => 'REW',
+      'RIGHT' => 'RIGHT',
+      'Return to Factory Settings' => 'INIT',
+      'SEARCH' => 'SEARCH',
+      'SETUP' => 'SETUP',
+      'SLOW' => 'SLOW.F',
+      'SLOW BACK' => 'SLOW.R',
+      'STEP ' => 'STEP.F',
+      'STEP BACK' => 'STEP.R',
+      'STOP' => 'STOP',
+      'SUBTITLE' => 'SUBTITLE',
+      'SUBTITLE ON/OFF' => 'SUBTON/OFF',
+      'TOPMENU' => 'TOPMENU',
+      'UP' => 'UP',
+      'VIDEO ON/OFF' => 'VDOFF',
+      'ZOOM' => 'ZOOMTG',
+      'ZOOM DOWN' => 'ZOOMDN',
+      'ZOOM UP' => 'ZOOMUP'
+    },
+    'Command' => 'CDV',
+    'Description' => 'DVD Player Operation Command (via RIHD only after TX-NR509)'
+  },
+  '"CDV" - DVD/BD Player Operation Command (via RIHD only after TX-NR509)' => {
+    'Arguments' => {
+      '0' => '0',
+      '1' => '1',
+      '2' => '2',
+      '3' => '3',
+      '4' => '4',
+      '5' => '5',
+      '6' => '6',
+      '7' => '7',
+      '8' => '8',
+      '9' => '9',
+      '>>I' => 'SKIP.F',
+      'A' => 'A',
+      'ANGLE' => 'ANGLE',
+      'B' => 'B',
+      'C' => 'C',
+      'CLEAR' => 'CLEAR',
+      'D' => 'D',
+      'DISPLAY' => 'DISP',
+      'DOWN' => 'DOWN',
+      'ENTER' => 'ENTER',
+      'FF >>' => 'FF',
+      'I<<' => 'SKIP.R',
+      'LEFT' => 'LEFT',
+      'MENU' => 'MENU',
+      'OPEN/CLOSE' => 'OP/CL',
+      'PAUSE' => 'PAUSE',
+      'PLAY' => 'PLAY',
+      'POWER OFF' => 'PWROFF',
+      'POWER ON' => 'PWRON',
+      'POWER ON/OFF' => 'POWER',
+      'RETURN' => 'RETURN',
+      'REW <<' => 'REW',
+      'RIGHT' => 'RIGHT',
+      'SETUP' => 'SETUP',
+      'STOP' => 'STOP',
+      'TOPMENU' => 'TOPMENU',
+      'UP' => 'UP'
+    },
+    'Command' => 'CDV',
+    'Description' => 'DVD/BD Player Operation Command (via RIHD only after TX-NR509)'
+  },
+  '"CEC" - HDMI CEC' => {
+    'Arguments' => {
+      'gets HDMI CEC' => 'QSTN',
+      'sets HDMI CEC Wrap-Around Up' => 'UP',
+      'sets Off' => '00',
+      'sets On' => '01'
+    },
+    'Command' => 'CEC',
+    'Description' => 'HDMI CEC'
+  },
+  '"CTL" - Center (temporary) Level Command' => {
+    'Arguments' => {
+      'LEVEL + Key' => 'UP',
+      'LEVEL ... KEY' => 'DOWN',
+      'gets the Subwoofer Level' => 'QSTN',
+      'sets Center Level -12dB - 0dB - +12dB' => '-C-00-+C'
+    },
+    'Command' => 'CTL',
+    'Description' => 'Center (temporary) Level Command'
+  },
+  '"CTV" - TV Operation Command (via RIHD)' => {
+    'Arguments' => {
+      '0' => '0',
+      '1' => '1',
+      '2' => '2',
+      '3' => '3',
+      '4' => '4',
+      '5' => '5',
+      '6' => '6',
+      '7' => '7',
+      '8' => '8',
+      '9' => '9',
+      'A for CEC US:R,EU:R,JP:B' => 'A',
+      'B for CEC US:G,EU:G,JP:R' => 'B',
+      'C for CEC US:B,EU:Y,JP:G' => 'C',
+      'CH Down' => 'CHDN',
+      'CH Up' => 'CHUP',
+      'Clear' => 'CLEAR',
+      'Cursor Down' => 'DOWN',
+      'Cursor Left' => 'LEFT',
+      'Cursor Right' => 'RIGHT',
+      'Cursor Up' => 'UP',
+      'D for CEC US:Y,EU:B,JP:Y' => 'D',
+      'Display' => 'DISP',
+      'Enter' => 'ENTER',
+      'Guide / Top Menu' => 'GUIDE',
+      'Input' => 'INPUT',
+      'Muting' => 'MUTE',
+      'Power' => 'POWER',
+      'PowerOn' => 'PWRON',
+      'Previous' => 'PREV',
+      'Return' => 'RETURN',
+      'Setup' => 'SETUP',
+      'Standby' => 'PWROFF',
+      'Volume Down' => 'VLDN',
+      'Volume Up' => 'VLUP'
+    },
+    'Command' => 'CTV',
+    'Description' => 'TV Operation Command (via RIHD)'
+  },
+  '"DIF" - Display Mode Command' => {
+    'Arguments' => {
+      'Display Digital Format(temporary display)' => '02',
+      'gets The Display Mode' => 'QSTN',
+      'sets Display Mode Wrap-Around Up' => 'TG',
+      'sets Selector + Volume Display Mode' => '00'
+    },
+    'Command' => 'DIF',
+    'Description' => 'Display Mode Command'
+  },
+  '"DIM" - Dimmer Level Command' => {
+    'Arguments' => {
+      'gets The Dimmer Level' => 'QSTN',
+      'sets Dimmer Level Bright' => '00',
+      'sets Dimmer Level Dark' => '02',
+      'sets Dimmer Level Dim' => '01',
+      'sets Dimmer Level Wrap-Around Up' => 'DIM'
+    },
+    'Command' => 'DIM',
+    'Description' => 'Dimmer Level Command'
+  },
+  '"ECO" - for Smart Grid Command' => {
+    'Arguments' => {
+      'sets Volume 1dB down and Dimmer Level Dark' => '01',
+      'sets Volume 3dB down and Dimmer Level Dark' => '03',
+      'sets Volume 6dB down and Dimmer Level Dark' => '06'
+    },
+    'Command' => 'ECO',
+    'Description' => 'for Smart Grid Command'
+  },
+  '"HAO" -HDMI Audio Out (Main)' => {
+    'Arguments' => {
+      'gets HDMI Audio Out' => 'QSTN',
+      'sets Auto' => '02',
+      'sets HDMI Audio Out Wrap-Around Up' => 'UP',
+      'sets Off' => '00',
+      'sets On' => '01'
+    },
+    'Command' => 'HAO',
+    'Description' => '"HAO" -HDMI Audio Out (Main)'
+  },
+  '"IFA" - Audio Infomation Command' => {
+    'Arguments' => {
+      'Infomation of Audio(Same Immediate Display \',\' is separator of infomations)' => 'nnnnn:nnnnn',
+      'gets Infomation of Audio' => 'QSTN'
+    },
+    'Command' => 'IFA',
+    'Description' => 'Audio Infomation Command'
+  },
+  '"LMD" - Listening Mode Command' => {
+    'Arguments' => {
+      'gets The Listening Mode' => 'QSTN',
+      'sets ACTION                                 Game-Action' => '05',
+      'sets ALL CH STEREO' => '0C',
+      'sets DIRECT ' => '01',
+      'sets ENHANCED 7/ENHANCE       Game-Sports' => '0E',
+      'sets FILM                                      Game-RPG' => '03',
+      'sets FULL MONO' => '13',
+      'sets Listening Mode Wrap-Around Down' => 'DOWN',
+      'sets Listening Mode Wrap-Around Up' => 'GAME',
+      'sets MONO ' => '0F',
+      'sets MUSICAL                               Game-Rock' => '06',
+      'sets Neo:6 Cinema/Neo:X Cinema' => '82',
+      'sets Neo:6 Music/Neo:X Music' => '83',
+      'sets ORCHESTRA' => '08',
+      'sets PLII/PLIIx Game' => '86',
+      'sets PLII/PLIIx Movie' => '80',
+      'sets PLII/PLIIx Music' => '81',
+      'sets PURE AUDIO ' => '11',
+      'sets STEREO' => '00',
+      'sets STUDIO-MIX' => '0A',
+      'sets SURROUND' => '02',
+      'sets Straight Decode*1' => '40',
+      'sets THEATER-DIMENSIONAL ' => '0D',
+      'sets TV LOGIC' => '0B',
+      'sets UNPLUGGED' => '09'
+    },
+    'Command' => 'LMD',
+    'Description' => 'Listening Mode Command'
+  },
+  '"LTN" - Late Night Command' => {
+    'Arguments' => {
+      'gets The Late Night Level' => 'QSTN',
+      'sets Late Night Auto@Dolby TrueHD' => '03',
+      'sets Late Night High@DolbyDigital,(On@Dolby TrueHD)' => '02',
+      'sets Late Night Low@DolbyDigital,On@Dolby TrueHD' => '01',
+      'sets Late Night Off' => '00',
+      'sets Late Night State Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'LTN',
+    'Description' => 'Late Night Command'
+  },
+  '"MEM" - Memory Setup Command' => {
+    'Arguments' => {
+      'recalls memory' => 'RCL',
+      'stores memory ' => 'STR'
+    },
+    'Command' => 'MEM',
+    'Description' => 'Memory Setup Command'
+  },
+  '"MOT" - Music Optimizer' => {
+    'Arguments' => {
+      'gets The Dolby Volume State' => 'QSTN',
+      'sets Music Optimizer Off' => '00',
+      'sets Music Optimizer On' => '01',
+      'sets Music Optimizer State Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'MOT',
+    'Description' => 'Music Optimizer'
+  },
+  '"MVL" - Master Volume Command' => {
+    'Arguments' => {
+      'Volume Level 0 ... 80 ( In hexadecimal representation)' => '00-50',
+      'gets the Volume Level' => 'QSTN',
+      'sets Volume Level Down' => 'DOWN',
+      'sets Volume Level Up' => 'UP'
+    },
+    'Command' => 'MVL',
+    'Description' => 'Master Volume Command'
+  },
+  '"NAL" - NET/USB Album Name Info' => {
+    'Arguments' => {
+      'NET/USB Album Name (variable-length, 64 Unicode letters [UTF-8 encoded] max , for Network Control only)' => 'nnnnnnn',
+      'gets NET/USB Album Name' => 'QSTN'
+    },
+    'Command' => 'NAL',
+    'Description' => 'NET/USB Album Name Info'
+  },
+  '"NAT" -NET/USB Artist Name Info' => {
+    'Arguments' => {
+      'NET/USB Artist Name (variable-length, 64 Unicode letters [UTF-8 encoded] max , for Network Control only)' => 'nnnnnnnnnn',
+      'gets NET/USB Artist Name' => 'QSTN'
+    },
+    'Command' => 'NAT',
+    'Description' => '"NAT" -NET/USB Artist Name Info'
+  },
+  '"NDS" - NET Connection/USB Device Status' => {
+    'Arguments' => {
+      'NET Connection/USB Device Status (3 letters)
+n -> NET Connection status: -: no connection, E: Ether, W: Wireless
+f -> Front USB(USB1) Device Status: -: no device, i: iPod/iPhone, 
+      M: Memory/NAS, W: Wireless Adaptor, B: Bluetooth Adaptor,
+      G: Google USB, x: disable
+r -> Rear USB(USB2) Device Status: -: no device, i: iPod/iPhone, 
+      M: Memory/NAS, W: Wireless Adaptor, B: Bluetooth Adaptor, 
+      G: Google USB, x: disable' => 'nfr',
+      'gets the Net/USB Status' => 'QSTN'
+    },
+    'Command' => 'NDS',
+    'Description' => 'NET Connection/USB Device Status'
+  },
+  '"NJA" - NET/USB Jacket Art (When Jacket Art is available and Output for Network Control Only)' => {
+    'Arguments' => {
+      'NET/USB Jacket Art/Album Art Data
+t-> Image type 0:BMP,1:JPEG
+p-> Packet flag 0:Start, 1:Next, 2:End
+xxxxxxxxxxxxxx -> Jacket/Album Art Data (valiable length, 1024 ASCII HEX letters max)' => 'tpxxxxxxxxxxxx',
+      'gets Jacket Art enable/disable' => 'QSTN',
+      'sets Jacket Art Wrap-Around Up' => 'UP',
+      'sets Jacket Art disable' => 'DIS',
+      'sets Jacket Art enable' => 'ENA'
+    },
+    'Command' => 'NJA',
+    'Description' => 'NET/USB Jacket Art (When Jacket Art is available and Output for Network Control Only)'
+  },
+  '"NKY" - NET Keyboard(for Network Control Only)' => {
+    'Arguments' => {
+      'set Keyboard Input letter
+nnnnnnnn is variable-length, 128 Unicode letters [UTF-8 encoded] max' => 'nnnnnnnnn',
+      'waiting Keyboard Input
+ll -> category
+ 00: Off ( Exit Keyboard Input )
+ 01: User Name
+ 02: Password
+ 03: Artist Name
+ 04: Album Name
+ 05: Song Name
+ 06: Station Name
+ 07: Tag Name
+ 08: Artist or Song
+ 09: Episode Name
+ 0A: Pin Code (some digit Number [0-9])
+ 0B: User Name (available ISO 8859-1 character set)
+ 0C: Password (available ISO 8859-1 character set)
+ 0D: URL' => 'll'
+    },
+    'Command' => 'NKY',
+    'Description' => 'NET Keyboard(for Network Control Only)'
+  },
+  '"NLA" - NET/USB List Info(All item, need processing XML data, for Network Control Only)' => {
+    'Arguments' => {
+      'select the listed item (from Network Control Only)
+zzzz -> sequence number (0000-FFFF)
+ll -> number of layer (00-FF)
+xxxx -> index number (0000-FFFF : 1st to 65536th Item [4 HEX digits] )
+---- -> not used' => 'Izzzzllxxxx----',
+      'specifiy to get the listed data (from Network Control Only)
+zzzz -> sequence number (0000-FFFF)
+ll -> number of layer (00-FF)
+xxxx -> index of start item (0000-FFFF : 1st to 65536th Item [4 HEX digits] )
+yyyy -> number of items (0000-FFFF : 1 to 65536 Items [4 HEX digits] )' => 'Lzzzzllxxxxyyyy',
+      't -> responce type \'X\' : XML
+zzzz -> sequence number (0000-FFFF)
+s -> status \'S\' : success, \'E\' : error
+u -> UI type \'0\' : List, \'1\' : Menu, \'2\' : Playback, \'3\' : Popup, \'4\' : Keyboard, 5 : Menu List
+rr -> reserved
+<.....> : XML data ( [CR] and [LF] are removed )
+ If s=\'S\',
+ <?xml version=1.0 encoding=UFT-8?>
+ <response status=ok>
+   <items offset=xxxx totalitems=yyyy >
+     <item iconid=aa title=bbb...bbb />
+     ...
+     <item iconid=aa title=bbb...bbb />
+   </Items>
+ </response>
+ If s=\'E\',
+ <?xml version=1.0 encoding=UFT-8?>
+ <response status=fail>
+   <error code=[error code] message=[error message] />
+ </response>
+xxxx : index of 1st item (0000-FFFF : 1st to 65536th Item [4 HEX digits] )
+yyyy : number of items (0000-FFFF : 1 to 65536 Items [4 HEX digits] )
+aa : Icon ID
+ \'29\' : Folder, \'2A\' : Folder X, \'2B\' : Server, \'2C\' : Server X, \'2D\' : Title, \'2E\' : Title X,
+ \'2F\' : Program, \'31\' : USB, \'36\' : Play, \'37\' : MultiAccount,
+ for Spotify
+ \'38\' : Account, \'39\' : Album, \'3A\' : Playlist, \'3B\' : Playlist-C, \'3C\' : starred,
+ \'3D\' : What\'sNew, \'3E\' : Artist, \'3F\' : Track, \'40\' : unstarred, \'41\' : Play, \'43\' : Search, \'44\' : Folder
+ for AUPEO!
+ \'42\' : Program
+bbb...bbb : Title
+' => 'tzzzzsurr<.....>'
+    },
+    'Command' => 'NLA',
+    'Description' => 'NET/USB List Info(All item, need processing XML data, for Network Control Only)'
+  },
+  '"NLS" - NET/USB List Info' => {
+    'Arguments' => {
+      'NET/USB List Info
+t ->Information Type (A : ASCII letter, C : Cursor Info, U : Unicode letter)
+when t = A,
+  l ->Line Info (0-9 : 1st to 10th Line)
+  nnnnnnnnn:Listed data (variable-length, 64 ASCII letters max)
+    when AVR is not displayed NET/USB List(Keyboard,Menu,Popup...), nnnnnnnnn is See TV.
+  p ->Property
+         - : no
+         0 : Playing, A : Artist, B : Album, F : Folder, M : Music, P : Playlist, S : Search
+         a : Account, b : Playlist-C, c : Starred, d : Unstarred, e : What\'s New
+when t = C,
+  l ->Cursor Position (0-9 : 1st to 10th Line, - : No Cursor)
+  p ->Update Type (P : Page Infomation Update ( Page Clear or Disable List Info) , C : Cursor Position Update)
+when t = U, (for Network Control Only)
+  l ->Line Info (0-9 : 1st to 10th Line)
+  nnnnnnnnn:Listed data (variable-length, 64 Unicode letters [UTF-8 encoded] max)
+    when AVR is not displayed NET/USB List(Keyboard,Menu,Popup...), nnnnnnnnn is See TV.
+  p ->Property
+         - : no
+         0 : Playing, A : Artist, B : Album, F : Folder, M : Music, P : Playlist, S : Search
+         a : Account, b : Playlist-C, c : Starred, d : Unstarred, e : What\'s New' => 'tlpnnnnnnnnnn',
+      'select the listed item
+ t -> Index Type (L : Line, I : Index)
+when t = L,
+  i -> Line number (0-9 : 1st to 10th Line [1 digit] )
+when t = I,
+  iiiii -> Index number (00001-99999 : 1st to 99999th Item [5 digits] )' => 'ti'
+    },
+    'Command' => 'NLS',
+    'Description' => 'NET/USB List Info'
+  },
+  '"NMD" - iPod Mode Change (with USB Connection Only)' => {
+    'Arguments' => {
+      'Extend Mode(If available)' => 'EXT',
+      'Standerd Mode' => 'STD',
+      'gets iPod Mode Status' => 'QSTN'
+    },
+    'Command' => 'NMD',
+    'Description' => 'iPod Mode Change (with USB Connection Only)'
+  },
+  '"NMS" - NET/USB Menu Status' => {
+    'Arguments' => {
+      'NET/USB Menu Status (7 letters)
+m -> Track Menu: M: Menu is enable, x: Menu is disable
+aa -> F1 button icon (Positive Feed or Mark/Unmark)
+bb -> F2 button icon (Negative Feed)
+ aa or bb : xx:disable, 01:Like, 02:don\'t like, 03:Love, 04:Ban,
+                  05:episode, 06:ratings, 07:Ban(black), 08:Ban(white),
+                  09:Favorite(black), 0A:Favorite(white), 0B:Favorite(yellow)
+s -> Time Seek S: Time Seek is enable x: Time Seek is disable
+t -> Time Display 1: Elapsed Time/Total Time, 2: Elapsed Time, x: disable
+ii-> Service icon
+ ii : 00:DLNA, 01:My Favorite, 02:vTuner, 03:SiriusXM, 04:Pandora,
+      05:Rhapsody, 06:Last.fm, 08:Slacker, 0A:Spotify, 0B:AUPEO!,
+      0C:radiko, 0D:e-onkyo, 0E:TuneIn, 0F:MP3tunes, 10:Simfy,
+      11:Home Media, F0: USB Front, F1: USB Rear, F2:Internet Radio
+      F3:NET, F4:Bluetooth' => 'maabbstii',
+      'gets the Net/USB Menu Status' => 'QSTN'
+    },
+    'Command' => 'NMS',
+    'Description' => 'NET/USB Menu Status'
+  },
+  '"NPR" - Internet Radio Preset Command' => {
+    'Arguments' => {
+      'preset memory current station' => 'SET',
+      'sets Preset No. 1 - 40 ( In hexadecimal representation)' => '01-28'
+    },
+    'Command' => 'NPR',
+    'Description' => 'Internet Radio Preset Command'
+  },
+  '"NPU" - NET Popup Message(for Network Control Only)' => {
+    'Arguments' => {
+      'x -> Popup Display Type
+ \'T\': Popup text is top
+ \'B\': Popup text is bottom
+ \'L\': Popup text is list format
+
+aaa...aaa -> Popup Title, Massage
+ when x = \'T\' or \'B\'
+    Top Title [0x00] Popup Title [0x00] Popup Message [0x00]
+    (valiable-length Unicode letter [UTF-8 encoded] )
+
+ when x = \'L\'
+    Top Title [0x00] Item Title 1 [0x00] Item Parameter 1 [0x00] ... [0x00] Item Title 6 [0x00] Item Parameter 6 [0x00]
+    (valiable-length Unicode letter [UTF-8 encoded] )
+
+y -> Cursor Position on button
+ \'0\' : Button is not Displayed
+ \'1\' : Cursor is on the button 1
+ \'2\' : Cursor is on the button 2
+
+bbb...bbb -> Text of Button
+    Text of Button 1 [0x00] Text of Button 2 [0x00]
+    (valiable-length Unicode letter [UTF-8 encoded] )' => 'xaaa...aaaybbb...bbb'
+    },
+    'Command' => 'NPU',
+    'Description' => 'NET Popup Message(for Network Control Only)'
+  },
+  '"NPZ" - Internet Radio Preset Command (Network Model Only)' => {
+    'Arguments' => {
+      'sets Preset No. 1 - 40 ( In hexadecimal representation)' => '01-28'
+    },
+    'Command' => 'NPZ',
+    'Description' => 'Internet Radio Preset Command (Network Model Only)'
+  },
+  '"NRI" - Receiver Information (for Network Control Only)' => {
+    'Arguments' => {
+      '<...>: XML Data <?xml...>' => '<...>',
+      'gets the Receiver Information Status' => 'QSTN'
+    },
+    'Command' => 'NRI',
+    'Description' => 'Receiver Information (for Network Control Only)'
+  },
+  '"NSB" - Network Standby Settings (for Network Control Only and Available in AVR is PowerOn)' => {
+    'Arguments' => {
+      'gets Network Standby Setting' => 'QSTN',
+      'sets Network Standby is Off' => 'OFF',
+      'sets Network Standby is On' => 'ON'
+    },
+    'Command' => 'NSB',
+    'Description' => 'Network Standby Settings (for Network Control Only and Available in AVR is PowerOn)'
+  },
+  '"NST" - NET/USB Play Status' => {
+    'Arguments' => {
+      'NET/USB Play Status (3 letters)
+p -> Play Status: S: STOP, P: Play, p: Pause, F: FF, R: FR, E: EOF
+r -> Repeat Status: -: Off, R: All, F: Folder, 1: Repeat 1, x: disable
+s -> Shuffle Status: -: Off, S: All , A: Album, F: Folder, x: disable' => 'prs',
+      'gets the Net/USB Play Status' => 'QSTN'
+    },
+    'Command' => 'NST',
+    'Description' => 'NET/USB Play Status'
+  },
+  '"NSV" - NET Service(for Network Control Only)' => {
+    'Arguments' => {
+      'select Network Service directly
+ss -> Network Serveice
+ 00:Media Server (DLNA), 01:Favorite, 02:vTuner, 03:SIRIUS, 04:Pandora, 05:Rhapsody, 06:Last.fm,
+ 07:Napster, 08:Slacker, 09:Mediafly, 0A:Spotify, 0B:AUPEO!, 0C:Radiko, 0D:e-onkyo,
+ 0E:TuneIn Radio, 0F:mp3tunes, 10:Simfy, 11:Home Media
+i-> Acount Info
+ 0: No
+ 1: Yes
+aaaa...aaaa: User Name ( 128 Unicode letters [UTF-8 encoded] max )
+bbbb...bbbb: Password ( 128 Unicode letters [UTF-8 encoded] max )' => 'ssiaaaa...aaaabbbb...bbbb'
+    },
+    'Command' => 'NSV',
+    'Description' => 'NET Service(for Network Control Only)'
+  },
+  '"NTC" - Network/USB Operation Command (Network Model Only after TX-NR905)' => {
+    'Arguments' => {
+      '0 KEY' => '0',
+      '1 KEY' => '1',
+      '2 KEY' => '2',
+      '3 KEY' => '3',
+      '4 KEY' => '4',
+      '5 KEY' => '5',
+      '6 KEY' => '6',
+      '7 KEY' => '7',
+      '8 KEY' => '8',
+      '9 KEY' => '9',
+      'CAPS KEY' => 'CAPS',
+      'CH DOWN(for iRadio)' => 'CHDN',
+      'CH UP(for iRadio)' => 'CHUP',
+      'DELETE KEY' => 'DELETE',
+      'DISPLAY KEY' => 'DISPLAY',
+      'DOWN KEY' => 'DOWN',
+      'FF KEY (CONTINUOUS*)' => 'FF',
+      'LEFT KEY' => 'LEFT',
+      'LIST <-> PLAYBACK' => 'LIST',
+      'MENU' => 'MENU',
+      'MODE(for iPod) STD<->EXT' => 'MODE',
+      'Negative Feed *1' => 'F2',
+      'PAUSE KEY' => 'PAUSE',
+      'PLAY KEY' => 'PLAY',
+      'Positive Feed or Mark/Unmark *1' => 'F1',
+      'RANDOM KEY' => 'RANDOM',
+      'REPEAT KEY' => 'REPEAT',
+      'RETURN KEY' => 'RETURN',
+      'REW KEY (CONTINUOUS*)' => 'REW',
+      'RIGHT KEY' => 'RIGHT',
+      'SELECT KEY' => 'SELECT',
+      'STOP KEY' => 'STOP',
+      'TOP MENU' => 'TOP',
+      'TRACK DOWN KEY' => 'TRDN',
+      'TRACK UP KEY' => 'TRUP',
+      'UP KEY' => 'UP'
+    },
+    'Command' => 'NTC',
+    'Description' => 'Network/USB Operation Command (Network Model Only after TX-NR905)'
+  },
+  '"NTI" - NET/USB Title Name' => {
+    'Arguments' => {
+      'NET/USB Title Name (variable-length, 64 Unicode letters [UTF-8 encoded] max , for Network Control only)' => 'nnnnnnnnnn',
+      'gets NET/USB Title Name' => 'QSTN'
+    },
+    'Command' => 'NTI',
+    'Description' => 'NET/USB Title Name'
+  },
+  '"NTM" - NET/USB Time Info' => {
+    'Arguments' => {
+      'NET/USB Time Info (Elapsed time/Track Time Max 99:59. If time is unknown, this response is --:--)' => 'mm:ss/mm:ss',
+      'gets NET/USB Time Info' => 'QSTN'
+    },
+    'Command' => 'NTM',
+    'Description' => 'NET/USB Time Info'
+  },
+  '"NTR" - NET/USB Track Info' => {
+    'Arguments' => {
+      'NET/USB Track Info (Current Track/Toral Track Max 9999. If Track is unknown, this response is ----)' => 'cccc/tttt',
+      'gets NET/USB Track Info' => 'QSTN'
+    },
+    'Command' => 'NTR',
+    'Description' => 'NET/USB Track Info'
+  },
+  '"NTS" - NET/USB Time Seek' => {
+    'Arguments' => {
+      'mm: munites (00-99)
+ss: seconds (00-59)
+This command is only available when Time Seek is enable.' => 'mm:ss'
+    },
+    'Command' => 'NTS',
+    'Description' => 'NET/USB Time Seek'
+  },
+  '"NTZ" - Net-Tune/Network Operation Command(Network Model Only)' => {
+    'Arguments' => {
+      'CH DOWN(for iRadio)' => 'CHDN',
+      'CH UP(for iRadio)' => 'CHUP',
+      'DISPLAY KEY(for iPod 1wire)' => 'DISPLAY',
+      'DOWN KEY(for iPod 1wire)' => 'DOWN',
+      'FF KEY (CONTINUOUS*) (for iPod 1wire)' => 'FF',
+      'LEFT KEY(for iPod 1wire)' => 'LEFT',
+      'PAUSE KEY' => 'PAUSE',
+      'PLAY KEY' => 'PLAY',
+      'RANDOM KEY(for iPod 1wire)' => 'RANDOM',
+      'REPEAT KEY(for iPod 1wire)' => 'REPEAT',
+      'RETURN KEY(for iPod 1wire)' => 'RETURN',
+      'REW KEY (CONTINUOUS*) (for iPod 1wire)' => 'REW',
+      'RIGHT KEY(for iPod 1wire)' => 'RIGHT',
+      'SELECT KEY(for iPod 1wire)' => 'SELECT',
+      'STOP KEY' => 'STOP',
+      'TRACK DOWN KEY' => 'TRDN',
+      'TRACK UP KEY' => 'TRUP',
+      'UP KEY(for iPod 1wire)' => 'UP'
+    },
+    'Command' => 'NTZ',
+    'Description' => 'Net-Tune/Network Operation Command(Network Model Only)'
+  },
+  '"OSD" - Setup Operation Command' => {
+    'Arguments' => {
+      'Down Key' => 'DOWN',
+      'Enter Key' => 'ENTER',
+      'Exit Key' => 'EXIT',
+      'Home Key' => 'HOME',
+      'Left Key' => 'LEFT',
+      'Menu Key' => 'MENU',
+      'Quick Setup Key' => 'QUICK',
+      'Right Key' => 'RIGHT',
+      'Up Key' => 'UP'
+    },
+    'Command' => 'OSD',
+    'Description' => 'Setup Operation Command'
+  },
+  '"PMB" - Phase Matching Bass Command' => {
+    'Arguments' => {
+      'gets Phase Matching Bass' => 'QSTN',
+      'sets Off' => '00',
+      'sets On' => '01',
+      'sets Phase Matching Bass Wrap-Around Up' => 'TG'
+    },
+    'Command' => 'PMB',
+    'Description' => 'Phase Matching Bass Command'
+  },
+  '"PRM" - Preset Memory Command (Include Tuner Pack Model Only)' => {
+    'Arguments' => {
+      'sets Preset No. 1 - 40 ( In hexadecimal representation)' => '01-28'
+    },
+    'Command' => 'PRM',
+    'Description' => 'Preset Memory Command (Include Tuner Pack Model Only)'
+  },
+  '"PRS" - Preset Command (Include Tuner Pack Model Only)' => {
+    'Arguments' => {
+      'gets The Preset No.' => 'QSTN',
+      'sets Preset No. 1 - 40 ( In hexadecimal representation)' => '01-28',
+      'sets Preset No. Wrap-Around Down' => 'DOWN',
+      'sets Preset No. Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'PRS',
+    'Description' => 'Preset Command (Include Tuner Pack Model Only)'
+  },
+  '"PRZ" - Preset Command' => {
+    'Arguments' => {
+      'gets The Preset No.' => 'QSTN',
+      'sets Preset No. 1 - 40 ( In hexadecimal representation)' => '01-28',
+      'sets Preset No. Wrap-Around Down' => 'DOWN',
+      'sets Preset No. Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'PRZ',
+    'Description' => 'Preset Command'
+  },
+  '"PTS" - PTY Scan Command (RDS Model Only)' => {
+    'Arguments' => {
+      'Finish PTY Scan' => 'ENTER',
+      'sets PTY No 0 - 30 ( In hexadecimal representation)' => '00-1E'
+    },
+    'Command' => 'PTS',
+    'Description' => 'PTY Scan Command (RDS Model Only)'
+  },
+  '"PWR" - System Power Command' => {
+    'Arguments' => {
+      'gets the System Power Status' => 'QSTN',
+      'sets System On' => '01',
+      'sets System Standby' => '00'
+    },
+    'Command' => 'PWR',
+    'Description' => 'System Power Command'
+  },
+  '"RAS" - Cinema Filter Command' => {
+    'Arguments' => {
+      'gets The Cinema Filter State' => 'QSTN',
+      'sets Cinema Filter Off' => '00',
+      'sets Cinema Filter On' => '01',
+      'sets Cinema Filter State Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'RAS',
+    'Description' => 'Cinema Filter Command'
+  },
+  '"RDS" - RDS Information Command (RDS Model Only)' => {
+    'Arguments' => {
+      'Display PTY Information' => '01',
+      'Display RDS Information Wrap-Around Change' => 'UP',
+      'Display RT Information*1' => '00',
+      'Display TP Information' => '02'
+    },
+    'Command' => 'RDS',
+    'Description' => 'RDS Information Command (RDS Model Only)'
+  },
+  '"SLA" - Audio Selector Command' => {
+    'Arguments' => {
+      'gets The Audio Selector Status' => 'QSTN',
+      'sets ANALOG' => '02',
+      'sets ARC' => '07',
+      'sets Audio Selector Wrap-Around Up' => 'UP',
+      'sets COAX/OPT' => '05',
+      'sets HDMI' => '04'
+    },
+    'Command' => 'SLA',
+    'Description' => 'Audio Selector Command'
+  },
+  '"SLC" - Speaker Level Calibration Command' => {
+    'Arguments' => {
+      'CH SEL Key' => 'CHSEL',
+      'LEVEL + Key' => 'UP',
+      'LEVEL ... KEY' => 'DOWN',
+      'TEST Key' => 'TEST',
+      'sets TEST TONE OFF' => 'OFF'
+    },
+    'Command' => 'SLC',
+    'Description' => 'Speaker Level Calibration Command'
+  },
+  '"SLI" - Input Selector Command' => {
+    'Arguments' => {
+      'gets The Selector Position' => 'QSTN',
+      'sets AM' => '25',
+      'sets CD    TV/CD' => '23',
+      'sets DVD          BD/DVD' => '10',
+      'sets FM' => '24',
+      'sets INTERNET RADIO           iRadio Favorite*3' => '28',
+      'sets MUSIC SERVER    P4S   DLNA*2' => '27',
+      'sets NETWORK                      NET' => '2B',
+      'sets Selector Position Wrap-Around Down' => 'DOWN',
+      'sets Selector Position Wrap-Around Up' => 'UP',
+      'sets TUNER' => '26',
+      'sets USB(Rear)' => '2A',
+      'sets USB(toggle)' => '2C',
+      'sets USB/USB(Front)' => '29',
+      'sets VIDEO2    CBL/SAT' => '01',
+      'sets VIDEO3    GAME/TV    GAME     GAME1' => '02',
+      'sets VIDEO4    AUX1(AUX)' => '03',
+      'sets VIDEO6    PC' => '05'
+    },
+    'Command' => 'SLI',
+    'Description' => 'Input Selector Command'
+  },
+  '"SLP" - Sleep Set Command' => {
+    'Arguments' => {
+      'gets The Sleep Time' => 'QSTN',
+      'sets Sleep Time 1 - 90min ( In hexadecimal representation)' => '01-5A',
+      'sets Sleep Time Off' => 'OFF',
+      'sets Sleep Time Wrap-Around UP' => 'UP'
+    },
+    'Command' => 'SLP',
+    'Description' => 'Sleep Set Command'
+  },
+  '"SLZ" - ZONE2 Selector Command' => {
+    'Arguments' => {
+      'gets The Selector Position' => 'QSTN',
+      'sets AM' => '25',
+      'sets CD    TV/CD' => '23',
+      'sets DVD          BD/DVD' => '10',
+      'sets FM' => '24',
+      'sets INTERNET RADIO           iRadio Favorite*5' => '28',
+      'sets MUSIC SERVER    P4S   DLNA*4' => '27',
+      'sets NETWORK                      NET' => '2B',
+      'sets SOURCE' => '80',
+      'sets Selector Position Wrap-Around Down' => 'DOWN',
+      'sets Selector Position Wrap-Around Up' => 'UP',
+      'sets TUNER' => '26',
+      'sets USB(Rear)' => '2A',
+      'sets USB(toggle)' => '2C',
+      'sets USB/USB(Front)' => '29',
+      'sets VIDEO2    CBL/SAT' => '01',
+      'sets VIDEO3    GAME/TV    GAME     GAME1' => '02',
+      'sets VIDEO4    AUX1(AUX)' => '03',
+      'sets VIDEO6    PC' => '05'
+    },
+    'Command' => 'SLZ',
+    'Description' => 'ZONE2 Selector Command'
+  },
+  '"SWL" - Subwoofer (temporary) Level Command' => {
+    'Arguments' => {
+      'LEVEL + Key' => 'UP',
+      'LEVEL ... KEY' => 'DOWN',
+      'gets the Subwoofer Level' => 'QSTN',
+      'sets Subwoofer Level -15dB - 0dB - +12dB' => '-F-00-+C'
+    },
+    'Command' => 'SWL',
+    'Description' => 'Subwoofer (temporary) Level Command'
+  },
+  '"TFR" - Tone(Front) Command' => {
+    'Arguments' => {
+      'Front Bass (xx is -A...00...+A[-10...0...+10 2 step]' => 'Bxx',
+      'Front Treble (xx is -A...00...+A[-10...0...+10 2 step]' => 'Txx',
+      'gets Front Tone (BxxTxx)' => 'QSTN',
+      'sets Front Bass down(2 step)' => 'BDOWN',
+      'sets Front Bass up(2 step)' => 'BUP',
+      'sets Front Treble down(2 step)' => 'TDOWN',
+      'sets Front Treble up(2 step)' => 'TUP'
+    },
+    'Command' => 'TFR',
+    'Description' => 'Tone(Front) Command'
+  },
+  '"TPS" - TP Scan Command (RDS Model Only)' => {
+    'Arguments' => {
+      'Finish TP Scan' => 'ENTER',
+      'Start TP Scan (When Don\'t Have Parameter)' => ''
+    },
+    'Command' => 'TPS',
+    'Description' => 'TP Scan Command (RDS Model Only)'
+  },
+  '"TUN" - Tuning Command (Include Tuner Pack Model Only)' => {
+    'Arguments' => {
+      'gets The Tuning Frequency' => 'QSTN',
+      'sets 0 in Direct Tuning Mode' => '0',
+      'sets 1 in Direct Tuning Mode' => '1',
+      'sets 2 in Direct Tuning Mode' => '2',
+      'sets 3 in Direct Tuning Mode' => '3',
+      'sets 4 in Direct Tuning Mode' => '4',
+      'sets 5 in Direct Tuning Mode' => '5',
+      'sets 6 in Direct Tuning Mode' => '6',
+      'sets 7 in Direct Tuning Mode' => '7',
+      'sets 8 in Direct Tuning Mode' => '8',
+      'sets 9 in Direct Tuning Mode' => '9',
+      'sets Directly Tuning Frequency (FM nnn.nn MHz / AM nnnnn kHz / SR nnnnn ch)
+put 0 in the first two digits of nnnnn at SR' => 'nnnnn',
+      'sets Tuning Frequency Wrap-Around Down' => 'DOWN',
+      'sets Tuning Frequency Wrap-Around Up' => 'UP',
+      'starts/restarts Direct Tuning Mode' => 'DIRECT'
+    },
+    'Command' => 'TUN',
+    'Description' => 'Tuning Command (Include Tuner Pack Model Only)'
+  },
+  '"TUZ" - Tuning Command' => {
+    'Arguments' => {
+      'gets The Tuning Frequency' => 'QSTN',
+      'sets 0 in Direct Tuning Mode' => '0',
+      'sets 1 in Direct Tuning Mode' => '1',
+      'sets 2 in Direct Tuning Mode' => '2',
+      'sets 3 in Direct Tuning Mode' => '3',
+      'sets 4 in Direct Tuning Mode' => '4',
+      'sets 5 in Direct Tuning Mode' => '5',
+      'sets 6 in Direct Tuning Mode' => '6',
+      'sets 7 in Direct Tuning Mode' => '7',
+      'sets 8 in Direct Tuning Mode' => '8',
+      'sets 9 in Direct Tuning Mode' => '9',
+      'sets Directly Tuning Frequency (FM nnn.nn MHz / AM nnnnn kHz / SR nnnnn ch)' => 'nnnnn',
+      'sets Tuning Frequency Wrap-Around Down' => 'DOWN',
+      'sets Tuning Frequency Wrap-Around Up' => 'UP',
+      'starts/restarts Direct Tuning Mode' => 'DIRECT'
+    },
+    'Command' => 'TUZ',
+    'Description' => 'Tuning Command'
+  },
+  '"ZMT" - Zone2 Muting Command' => {
+    'Arguments' => {
+      'gets the Zone2 Muting Status' => 'QSTN',
+      'sets Zone2 Muting Off' => '00',
+      'sets Zone2 Muting On' => '01',
+      'sets Zone2 Muting Wrap-Around' => 'TG'
+    },
+    'Command' => 'ZMT',
+    'Description' => 'Zone2 Muting Command'
+  },
+  '"ZPW" - Zone2 Power Command' => {
+    'Arguments' => {
+      'gets the Zone2 Power Status' => 'QSTN',
+      'sets Zone2 On' => '01',
+      'sets Zone2 Standby' => '00'
+    },
+    'Command' => 'ZPW',
+    'Description' => 'Zone2 Power Command'
+  }
+};

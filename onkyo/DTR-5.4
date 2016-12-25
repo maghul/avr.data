@@ -1,0 +1,295 @@
+$$device{'DTR-5.4'} = {
+  '"AMT" - Audio Muting Command' => {
+    'Arguments' => {
+      'gets the Audio Muting State' => 'QSTN',
+      'sets Audio Muting Off' => '00',
+      'sets Audio Muting On' => '01',
+      'sets Audio Muting Wrap-Around' => 'TG'
+    },
+    'Command' => 'AMT',
+    'Description' => 'Audio Muting Command'
+  },
+  '"DIF" - Display Mode Command' => {
+    'Arguments' => {
+      'gets The Display Mode' => 'QSTN',
+      'sets Display Mode Wrap-Around Up' => 'TG',
+      'sets Selector + Listening Mode Display Mode' => '01',
+      'sets Selector + Volume Display Mode' => '00'
+    },
+    'Command' => 'DIF',
+    'Description' => 'Display Mode Command'
+  },
+  '"DIM" - Dimmer Level Command' => {
+    'Arguments' => {
+      'gets The Dimmer Level' => 'QSTN',
+      'sets Dimmer Level Bright' => '00',
+      'sets Dimmer Level Dark' => '02',
+      'sets Dimmer Level Dim' => '01',
+      'sets Dimmer Level Wrap-Around Up' => 'DIM'
+    },
+    'Command' => 'DIM',
+    'Description' => 'Dimmer Level Command'
+  },
+  '"LMD" - Listening Mode Command' => {
+    'Arguments' => {
+      'gets The Listening Mode' => 'QSTN',
+      'sets ALL CH STEREO' => '0C',
+      'sets DIRECT ' => '01',
+      'sets ENHANCED 7/ENHANCE       Game-Sports' => '0E',
+      'sets Listening Mode Wrap-Around Down' => 'DOWN',
+      'sets Listening Mode Wrap-Around Up' => 'UP',
+      'sets MONO ' => '0F',
+      'sets MONO MOVIE' => '07',
+      'sets Neo:6 Cinema/Neo:X Cinema' => '82',
+      'sets Neo:6 Music/Neo:X Music' => '83',
+      'sets ORCHESTRA' => '08',
+      'sets PLII/PLIIx Movie' => '80',
+      'sets PLII/PLIIx Music' => '81',
+      'sets STEREO' => '00',
+      'sets STUDIO-MIX' => '0A',
+      'sets SURROUND' => '02',
+      'sets THEATER-DIMENSIONAL ' => '0D',
+      'sets TV LOGIC' => '0B',
+      'sets UNPLUGGED' => '09'
+    },
+    'Command' => 'LMD',
+    'Description' => 'Listening Mode Command'
+  },
+  '"LTN" - Late Night Command' => {
+    'Arguments' => {
+      'gets The Late Night Level' => 'QSTN',
+      'sets Late Night High@DolbyDigital,(On@Dolby TrueHD)' => '02',
+      'sets Late Night Low@DolbyDigital,On@Dolby TrueHD' => '01',
+      'sets Late Night Off' => '00',
+      'sets Late Night State Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'LTN',
+    'Description' => 'Late Night Command'
+  },
+  '"MVL" - Master Volume Command' => {
+    'Arguments' => {
+      'Volume Level 0 ... 100 ( In hexadecimal representation)' => '00-64',
+      'gets the Volume Level' => 'QSTN',
+      'sets Volume Level Down' => 'DOWN',
+      'sets Volume Level Up' => 'UP'
+    },
+    'Command' => 'MVL',
+    'Description' => 'Master Volume Command'
+  },
+  '"OSD" - Setup Operation Command' => {
+    'Arguments' => {
+      'Down Key' => 'DOWN',
+      'Enter Key' => 'ENTER',
+      'Exit Key' => 'EXIT',
+      'Left Key' => 'LEFT',
+      'Menu Key' => 'MENU',
+      'Right Key' => 'RIGHT',
+      'Up Key' => 'UP'
+    },
+    'Command' => 'OSD',
+    'Description' => 'Setup Operation Command'
+  },
+  '"PRS" - Preset Command' => {
+    'Arguments' => {
+      'gets The Preset No.' => 'QSTN',
+      'sets Preset No. 1 - 40 ( In hexadecimal representation)' => '01-28',
+      'sets Preset No. Wrap-Around Down' => 'DOWN',
+      'sets Preset No. Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'PRS',
+    'Description' => 'Preset Command'
+  },
+  '"PRS" - Preset Command (Include Tuner Pack Model Only)' => {
+    'Arguments' => {
+      'gets The Preset No.' => 'QSTN',
+      'sets Preset No. 1 - 40 ( In hexadecimal representation)' => '01-28',
+      'sets Preset No. Wrap-Around Down' => 'DOWN',
+      'sets Preset No. Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'PRS',
+    'Description' => 'Preset Command (Include Tuner Pack Model Only)'
+  },
+  '"PTS" - PTY Scan Command (RDS Model Only)' => {
+    'Arguments' => {
+      'Finish PTY Scan' => 'ENTER',
+      'sets PTY No 0 - 30 ( In hexadecimal representation)' => '00-1E'
+    },
+    'Command' => 'PTS',
+    'Description' => 'PTY Scan Command (RDS Model Only)'
+  },
+  '"PWR" - System Power Command' => {
+    'Arguments' => {
+      'gets the System Power Status' => 'QSTN',
+      'sets System On' => '01',
+      'sets System Standby' => '00'
+    },
+    'Command' => 'PWR',
+    'Description' => 'System Power Command'
+  },
+  '"RAS" - Cinema Filter Command' => {
+    'Arguments' => {
+      'gets The Cinema Filter State' => 'QSTN',
+      'sets Cinema Filter Off' => '00',
+      'sets Cinema Filter On' => '01',
+      'sets Cinema Filter State Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'RAS',
+    'Description' => 'Cinema Filter Command'
+  },
+  '"RDS" - RDS Information Command (RDS Model Only)' => {
+    'Arguments' => {
+      'Display PTY Information' => '01',
+      'Display RDS Information Wrap-Around Change' => 'UP',
+      'Display RT Information*1' => '00',
+      'Display TP Information' => '02'
+    },
+    'Command' => 'RDS',
+    'Description' => 'RDS Information Command (RDS Model Only)'
+  },
+  '"SLA" - Audio Selector Command' => {
+    'Arguments' => {
+      'gets The Audio Selector Status' => 'QSTN',
+      'sets ANALOG' => '02',
+      'sets AUTO' => '00',
+      'sets Audio Selector Wrap-Around Up' => 'UP',
+      'sets MULTI-CHANNEL' => '01'
+    },
+    'Command' => 'SLA',
+    'Description' => 'Audio Selector Command'
+  },
+  '"SLC" - Speaker Level Calibration Command' => {
+    'Arguments' => {
+      'CH SEL Key' => 'CHSEL',
+      'LEVEL + Key' => 'UP',
+      'LEVEL ... KEY' => 'DOWN',
+      'TEST Key' => 'TEST'
+    },
+    'Command' => 'SLC',
+    'Description' => 'Speaker Level Calibration Command'
+  },
+  '"SLI" - Input Selector Command' => {
+    'Arguments' => {
+      'gets The Selector Position' => 'QSTN',
+      'sets AM' => '25',
+      'sets CD    TV/CD' => '23',
+      'sets DVD          BD/DVD' => '10',
+      'sets FM' => '24',
+      'sets Selector Position Wrap-Around Down' => 'DOWN',
+      'sets Selector Position Wrap-Around Up' => 'UP',
+      'sets TAPE(1)    TV/TAPE' => '20',
+      'sets TUNER' => '26',
+      'sets VIDEO1    VCR/DVR     STB/DVR' => '00',
+      'sets VIDEO2    CBL/SAT' => '01',
+      'sets VIDEO3    GAME/TV    GAME     GAME1' => '02',
+      'sets VIDEO4    AUX1(AUX)' => '03'
+    },
+    'Command' => 'SLI',
+    'Description' => 'Input Selector Command'
+  },
+  '"SLP" - Sleep Set Command' => {
+    'Arguments' => {
+      'gets The Sleep Time' => 'QSTN',
+      'sets Sleep Time 1 - 90min ( In hexadecimal representation)' => '01-5A',
+      'sets Sleep Time Off' => 'OFF',
+      'sets Sleep Time Wrap-Around UP' => 'UP'
+    },
+    'Command' => 'SLP',
+    'Description' => 'Sleep Set Command'
+  },
+  '"SLR" - RECOUT Selector Command' => {
+    'Arguments' => {
+      'gets The Selector Position' => 'QSTN',
+      'sets AM' => '25',
+      'sets CD' => '23',
+      'sets DVD' => '10',
+      'sets FM' => '24',
+      'sets OFF' => '7F',
+      'sets SOURCE' => '80',
+      'sets TAPE(1)' => '20',
+      'sets TUNER' => '26',
+      'sets VIDEO1' => '00',
+      'sets VIDEO2' => '01',
+      'sets VIDEO3' => '02',
+      'sets VIDEO4' => '03'
+    },
+    'Command' => 'SLR',
+    'Description' => 'RECOUT Selector Command'
+  },
+  '"SLZ" - ZONE2 Selector Command' => {
+    'Arguments' => {
+      'gets The Selector Position' => 'QSTN',
+      'sets AM' => '25',
+      'sets CD    TV/CD' => '23',
+      'sets DVD          BD/DVD' => '10',
+      'sets FM' => '24',
+      'sets OFF' => '7F',
+      'sets SOURCE' => '80',
+      'sets TAPE(1)' => '20',
+      'sets TUNER' => '26',
+      'sets VIDEO1    VCR/DVR    STB/DVR' => '00',
+      'sets VIDEO2    CBL/SAT' => '01',
+      'sets VIDEO3    GAME/TV    GAME     GAME1' => '02',
+      'sets VIDEO4    AUX1(AUX)' => '03'
+    },
+    'Command' => 'SLZ',
+    'Description' => 'ZONE2 Selector Command'
+  },
+  '"TPS" - TP Scan Command (RDS Model Only)' => {
+    'Arguments' => {
+      'Finish TP Scan' => 'ENTER',
+      'Start TP Scan (When Don\'t Have Parameter)' => ''
+    },
+    'Command' => 'TPS',
+    'Description' => 'TP Scan Command (RDS Model Only)'
+  },
+  '"TUN" - Tuning Command' => {
+    'Arguments' => {
+      'gets The Tuning Frequency' => 'QSTN',
+      'sets Directly Tuning Frequency (FM nnn.nn MHz / AM nnnnn kHz / XM nnnnn ch)' => 'nnnnn',
+      'sets Tuning Frequency Wrap-Around Down' => 'DOWN',
+      'sets Tuning Frequency Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'TUN',
+    'Description' => 'Tuning Command'
+  },
+  '"TUN" - Tuning Command (Include Tuner Pack Model Only)' => {
+    'Arguments' => {
+      'gets The Tuning Frequency' => 'QSTN',
+      'sets Directly Tuning Frequency (FM nnn.nn MHz / AM nnnnn kHz / SR nnnnn ch)
+put 0 in the first two digits of nnnnn at SR' => 'nnnnn',
+      'sets Tuning Frequency Wrap-Around Down' => 'DOWN',
+      'sets Tuning Frequency Wrap-Around Up' => 'UP'
+    },
+    'Command' => 'TUN',
+    'Description' => 'Tuning Command (Include Tuner Pack Model Only)'
+  },
+  '"ZMT" - Zone2 Muting Command' => {
+    'Arguments' => {
+      'gets the Zone2 Muting Status' => 'QSTN',
+      'sets Zone2 Muting Off' => '00',
+      'sets Zone2 Muting On' => '01',
+      'sets Zone2 Muting Wrap-Around' => 'TG'
+    },
+    'Command' => 'ZMT',
+    'Description' => 'Zone2 Muting Command'
+  },
+  '"ZPW" - Zone2 Power Command' => {
+    'Arguments' => {
+      'gets the Zone2 Power Status' => 'QSTN',
+      'sets Zone2 On' => '01',
+      'sets Zone2 Standby' => '00'
+    },
+    'Command' => 'ZPW',
+    'Description' => 'Zone2 Power Command'
+  },
+  '"ZVL" - Zone2 Volume Command' => {
+    'Arguments' => {
+      'Volume Level 0 ... 100 ( In hexadecimal representation)' => '00-64',
+      'gets the Volume Level' => 'QSTN',
+      'sets Volume Level Down' => 'DOWN',
+      'sets Volume Level Up' => 'UP'
+    },
+    'Command' => 'ZVL',
+    'Description' => 'Zone2 Volume Command'
+  }
+};
