@@ -12,8 +12,8 @@ $$device{'DTR-5.3'} = {
     'Arguments' => {
       'gets The Display Mode' => 'QSTN',
       'sets Display Mode Wrap-Around Up' => 'TG',
-      'sets Selector + Listening Mode Display Mode' => '01',
-      'sets Selector + Volume Display Mode' => '00'
+      'sets Selector + Listening Mode Display Mode@1line' => '01',
+      'sets Selector + Volume Display Mode@1line, Default@2line' => '00'
     },
     'Command' => 'DIF',
     'Description' => 'Display Mode Command'
@@ -33,7 +33,7 @@ $$device{'DTR-5.3'} = {
     'Arguments' => {
       'gets The Listening Mode' => 'QSTN',
       'sets ALL CH STEREO' => '0C',
-      'sets DIRECT ' => '01',
+      'sets DIRECT' => '01',
       'sets Listening Mode Wrap-Around Down' => 'DOWN',
       'sets Listening Mode Wrap-Around Up' => 'UP',
       'sets ORCHESTRA' => '08',
@@ -59,7 +59,7 @@ $$device{'DTR-5.3'} = {
   },
   '"MVL" - Master Volume Command' => {
     'Arguments' => {
-      'Volume Level 0 ... 100 ( In hexadecimal representation)' => '00-64',
+      'Volume Level 0 – 100 ( In hexadecimal representation)' => '00-64',
       'gets the Volume Level' => 'QSTN',
       'sets Volume Level Down' => 'DOWN',
       'sets Volume Level Up' => 'UP'
@@ -134,7 +134,7 @@ $$device{'DTR-5.3'} = {
     'Arguments' => {
       'CH SEL Key' => 'CHSEL',
       'LEVEL + Key' => 'UP',
-      'LEVEL ... KEY' => 'DOWN',
+      'LEVEL – KEY' => 'DOWN',
       'TEST Key' => 'TEST'
     },
     'Command' => 'SLC',
@@ -220,7 +220,7 @@ put 0 in the first two digits of nnnnn at SR' => 'nnnnn',
   },
   '"ZVL" - Zone2 Volume Command' => {
     'Arguments' => {
-      'Volume Level 0 ... 100 ( In hexadecimal representation)' => '00-64',
+      'Volume Level 0 – 100 ( In hexadecimal representation)' => '00-64',
       'gets the Volume Level' => 'QSTN',
       'sets Volume Level Down' => 'DOWN',
       'sets Volume Level Up' => 'UP'

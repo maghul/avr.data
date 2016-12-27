@@ -186,7 +186,7 @@ s -> Shuffle Status: -: Off' => 'prs',
       'SETUP' => 'SETUP',
       'SLOW' => 'SLOW.F',
       'SLOW BACK' => 'SLOW.R',
-      'STEP ' => 'STEP.F',
+      'STEP' => 'STEP.F',
       'STEP BACK' => 'STEP.R',
       'STOP' => 'STOP',
       'SUBTITLE' => 'SUBTITLE',
@@ -280,7 +280,7 @@ s -> Shuffle Status: -: Off' => 'prs',
   '"CTL" - Center (temporary) Level Command' => {
     'Arguments' => {
       'LEVEL + Key' => 'UP',
-      'LEVEL ... KEY' => 'DOWN',
+      'LEVEL – KEY' => 'DOWN',
       'gets the Subwoofer Level' => 'QSTN',
       'sets Center Level -12dB - 0dB - +12dB' => '-C-00-+C'
     },
@@ -293,7 +293,7 @@ s -> Shuffle Status: -: Off' => 'prs',
       'Display Video Format(temporary display)' => '03',
       'gets The Display Mode' => 'QSTN',
       'sets Display Mode Wrap-Around Up' => 'TG',
-      'sets Selector + Volume Display Mode' => '00'
+      'sets Selector + Volume Display Mode@1line, Default@2line' => '00'
     },
     'Command' => 'DIF',
     'Description' => 'Display Mode Command'
@@ -323,12 +323,12 @@ s -> Shuffle Status: -: Off' => 'prs',
   '"HDO" - HDMI Output Selector' => {
     'Arguments' => {
       'gets The HDMI Out Selector' => 'QSTN',
-      'sets                              Both' => '03',
+      'sets                              Both    Main+Sub' => '03',
       'sets                              Both(Main)' => '04',
       'sets                              Both(Sub)' => '05',
       'sets HDMI Out Selector Wrap-Around Up' => 'UP',
-      'sets Out Sub                HDMI Sub' => '02',
-      'sets Yes/Out Main        HDMI Main' => '01'
+      'sets Out Sub                HDMI Sub         HDBaseT' => '02',
+      'sets Yes/Out Main        HDMI Main       HDMI' => '01'
     },
     'Command' => 'HDO',
     'Description' => 'HDMI Output Selector'
@@ -351,16 +351,31 @@ s -> Shuffle Status: -: Off' => 'prs',
   },
   '"IFA" - Audio Infomation Command' => {
     'Arguments' => {
-      'Infomation of Audio(Same Immediate Display \',\' is separator of infomations)' => 'nnnnn:nnnnn',
-      'gets Infomation of Audio' => 'QSTN'
+      'Information of Audio(Same Immediate Display \',\' is separator of informations)
+a...a: Audio Input Port
+b...b: Input Signal Format
+c...c: Sampling Frequency
+d...d: Input Signal Channel
+e...e: Listening Mode
+f...f: Output Signal Channel' => 'a..a,b..b,c...c,d..d,e...e,f...f,',
+      'gets Information of Audio' => 'QSTN'
     },
     'Command' => 'IFA',
     'Description' => 'Audio Infomation Command'
   },
   '"IFV" - Video Infomation Command' => {
     'Arguments' => {
-      'gets Infomation of Video' => 'QSTN',
-      'infomation of Video(Same Immediate Display \',\' is separator of infomations)' => 'nnnnn:nnnnn'
+      'gets Information of Video' => 'QSTN',
+      'information of Video(Same Immediate Display \',\' is separator of infomations)
+a...a: Video Input Port
+b...b: Input Resolution, Frame Rate
+c...c: RGB/YCbCr
+d...d: Color Depth
+e...e: Video Output Port
+f...f: Output Resolution, Frame Rate
+g...g: RGB/YCbCr
+h...h: Color Depth
+i...i: Picture Mode' => 'a..a,b..b,c...c,d..d,e...e,f...f,g...g,h...h,i...i,'
     },
     'Command' => 'IFV',
     'Description' => 'Video Infomation Command'
@@ -375,7 +390,7 @@ when t = A,
   p ->Property (- : no)
 when t = C,
   l ->Cursor Position (0-9 : 1st to 10th Line, - : No Cursor)
-  p ->Update Type (P : Page Infomation Update ( Page Clear or Disable List Info) , C : Cursor Position Update)' => 'tlpnnnnnnnnnn'
+  p ->Update Type (P : Page Information Update ( Page Clear or Disable List Info) , C : Cursor Position Update)' => 'tlpnnnnnnnnnn'
     },
     'Command' => 'ILS',
     'Description' => 'iPod List Info (Universal Port Dock Extend Mode Only)'
@@ -431,29 +446,29 @@ s -> Shuffle Status - no Shuffle, S Shuffle, A Album Shuffle' => 'prs'
       'sets ACTION                                 Game-Action' => '05',
       'sets ALL CH STEREO' => '0C',
       'sets Audyssey DSX' => '16',
-      'sets DIRECT ' => '01',
+      'sets DIRECT' => '01',
       'sets Dolby EX*2' => '41',
       'sets ENHANCED 7/ENHANCE       Game-Sports' => '0E',
       'sets FILM                                      Game-RPG' => '03',
       'sets FULL MONO' => '13',
       'sets Listening Mode Wrap-Around Down' => 'DOWN',
       'sets Listening Mode Wrap-Around Up' => 'GAME',
-      'sets MONO ' => '0F',
+      'sets MONO' => '0F',
       'sets MUSICAL                               Game-Rock' => '06',
       'sets Neo:6 Cinema + Audyssey DSX' => 'A3',
-      'sets Neo:6 Cinema/Neo:X Cinema' => '82',
+      'sets Neo:6 Cinema/Neo:X Cinema     DTS:X/Neural:X' => '82',
       'sets Neo:6 Music + Audyssey DSX' => 'A4',
       'sets Neo:6 Music/Neo:X Music' => '83',
-      'sets Neo:6/Neo:X THX Cinema' => '85',
-      'sets Neo:6/Neo:X THX Games' => '8A',
-      'sets Neo:6/Neo:X THX Music' => '8C',
+      'sets Neo:6/Neo:X THX Cinema     DTS Neural:X THX Cinema' => '85',
+      'sets Neo:6/Neo:X THX Games     DTS Neural:X THX Games' => '8A',
+      'sets Neo:6/Neo:X THX Music     DTS Neural:X THX Music' => '8C',
       'sets ORCHESTRA' => '08',
       'sets PLII/PLIIx Game' => '86',
-      'sets PLII/PLIIx Movie' => '80',
+      'sets PLII/PLIIx Movie      Dolby Atmos/Dolby Surround' => '80',
       'sets PLII/PLIIx Music' => '81',
-      'sets PLII/PLIIx THX Cinema' => '84',
-      'sets PLII/PLIIx THX Games' => '89',
-      'sets PLII/PLIIx THX Music' => '8B',
+      'sets PLII/PLIIx THX Cinema       Dolby Surround THX Cinema' => '84',
+      'sets PLII/PLIIx THX Games     Dolby Surround THX Games' => '89',
+      'sets PLII/PLIIx THX Music     Dolby Surround THX Music' => '8B',
       'sets PLIIx/PLII Game + Audyssey DSX' => 'A2',
       'sets PLIIx/PLII Movie + Audyssey DSX' => 'A0',
       'sets PLIIx/PLII Music + Audyssey DSX' => 'A1',
@@ -465,7 +480,7 @@ s -> Shuffle Status - no Shuffle, S Shuffle, A Album Shuffle' => 'prs'
       'sets STUDIO-MIX' => '0A',
       'sets SURROUND' => '02',
       'sets Straight Decode*1' => '40',
-      'sets THEATER-DIMENSIONAL ' => '0D',
+      'sets THEATER-DIMENSIONAL' => '0D',
       'sets THX' => '04',
       'sets THX Cinema' => '42',
       'sets THX Games' => '45',
@@ -494,9 +509,9 @@ s -> Shuffle Status - no Shuffle, S Shuffle, A Album Shuffle' => 'prs'
   },
   '"MEM" - Memory Setup Command' => {
     'Arguments' => {
-      'locks memory ' => 'LOCK',
+      'locks memory' => 'LOCK',
       'recalls memory' => 'RCL',
-      'stores memory ' => 'STR',
+      'stores memory' => 'STR',
       'unlocks memory' => 'UNLK'
     },
     'Command' => 'MEM',
@@ -504,7 +519,7 @@ s -> Shuffle Status - no Shuffle, S Shuffle, A Album Shuffle' => 'prs'
   },
   '"MOT" - Music Optimizer' => {
     'Arguments' => {
-      'gets The Dolby Volume State' => 'QSTN',
+      'gets The Music Optimizer State' => 'QSTN',
       'sets Music Optimizer Off' => '00',
       'sets Music Optimizer On' => '01',
       'sets Music Optimizer State Wrap-Around Up' => 'UP'
@@ -514,7 +529,7 @@ s -> Shuffle Status - no Shuffle, S Shuffle, A Album Shuffle' => 'prs'
   },
   '"MVL" - Master Volume Command' => {
     'Arguments' => {
-      'Volume Level 0 ... 100 ( In hexadecimal representation)' => '00-64',
+      'Volume Level 0 – 100 ( In hexadecimal representation)' => '00-64',
       'gets the Volume Level' => 'QSTN',
       'sets Volume Level Down' => 'DOWN',
       'sets Volume Level Down 1dB Step' => 'DOWN1',
@@ -564,11 +579,7 @@ t ->Information Type (A : ASCII letter, C : Cursor Info)
 when t = A,
   l ->Line Info (0-9 : 1st to 10th Line)
   nnnnnnnnn:Listed data (variable-length, 64 ASCII letters max)
-  when AVR is not displayed NET/USB List(Ketboard,Menu,Popup...), nnnnnnnnn is See TV.
-  p ->Property (- : no)
-when t = C,
-  l ->Cursor Position (0-9 : 1st to 10th Line, - : No Cursor)
-  p ->Update Type (P : Page Infomation Update ( Page Clear or Disable List Info) , C : Cursor Position Update)' => 'tlpnnnnnnnnnn'
+  when AVR is not displayed ' => 'tlpnnnnnnnnnn'
     },
     'Command' => 'NLS',
     'Description' => 'NET/USB List Info'
@@ -579,7 +590,7 @@ when t = C,
 xx : Service Type
  00 : DLNA, 01 : Favorite, 02 : vTuner, 03 : SiriusXM, 04 : Pandora, 05 : Rhapsody, 06 : Last.fm,
  07 : Napster, 08 : Slacker, 09 : Mediafly, 0A : Spotify, 0B : AUPEO!, 0C : radiko, 0D : e-onkyo,
- 0E : TuneIn Radio, 0F : MP3tunes, 10 : Simfy, 11:Home Media
+ 0E : TuneIn Radio, 0F : MP3tunes, 10 : Simfy, 11:Home Media, 12:Deezer, 13:iHeartRadio,
  F0 : USB Front, F1 : USB Rear, F2 : Internet Radio, F3 : NET, FF : None
 u : UI Type
  0 : List, 1 : Menu, 2 : Playback, 3 : Popup, 4 : Keyboard, 5 : Menu List
@@ -598,7 +609,7 @@ aa : Icon on Left of Title Bar
 bb : Icon on Right of Title Bar
  00 : DLNA, 01 : Favorite, 02 : vTuner, 03 : SiriusXM, 04 : Pandora, 05 : Rhapsody, 06 : Last.fm,
  07 : Napster, 08 : Slacker, 09 : Mediafly, 0A : Spotify, 0B : AUPEO!, 0C : radiko, 0D : e-onkyo,
- 0E : TuneIn Radio, 0F : MP3tunes, 10 : Simfy, 11:Home Media
+ 0E : TuneIn Radio, 0F : MP3tunes, 10 : Simfy, 11:Home Media, 12:Deezer, 13:iHeartRadio,
  FF : None
 ss : Status Info
  00 : None, 01 : Connecting, 02 : Acquiring License, 03 : Buffering
@@ -609,13 +620,6 @@ nnn...nnn : Character of Title Bar (variable-length, 64 Unicode letters [UTF-8 e
     },
     'Command' => 'NLT',
     'Description' => 'NET/USB List Title Info(for Network Control Only)'
-  },
-  '"NMS" - NET/USB Menu Status' => {
-    'Arguments' => {
-      'gets the Net/USB Menu Status' => 'QSTN'
-    },
-    'Command' => 'NMS',
-    'Description' => 'NET/USB Menu Status'
   },
   '"NPR" - Internet Radio Preset Command' => {
     'Arguments' => {
@@ -776,7 +780,7 @@ s -> Shuffle Status: -: Off, S: All , A: Album, F: Folder' => 'prs',
   '"PTS" - PTY Scan Command (RDS Model Only)' => {
     'Arguments' => {
       'Finish PTY Scan' => 'ENTER',
-      'sets PTY No 0 - 30 ( In hexadecimal representation)' => '00-1E'
+      'sets PTY No 1 - 29 ( In hexadecimal representation)' => '01-1D'
     },
     'Command' => 'PTS',
     'Description' => 'PTY Scan Command (RDS Model Only)'
@@ -867,7 +871,7 @@ s -> Shuffle Status: -: Off, S: All , A: Album, F: Folder' => 'prs',
     'Arguments' => {
       'CH SEL Key' => 'CHSEL',
       'LEVEL + Key' => 'UP',
-      'LEVEL ... KEY' => 'DOWN',
+      'LEVEL – KEY' => 'DOWN',
       'TEST Key' => 'TEST'
     },
     'Command' => 'SLC',
@@ -950,7 +954,7 @@ s -> Shuffle Status: -: Off, S: All , A: Album, F: Folder' => 'prs',
       'sets Front High Speaker / SurrBack+Front High Speakers' => 'FH',
       'sets Front Wide Speaker / SurrBack+Front Wide Speakers' => 'FW',
       'sets Speaker Switch Wrap-Around' => 'UP',
-      'sets SurrBack Speaker ' => 'SB'
+      'sets SurrBack Speaker' => '”SB'
     },
     'Command' => 'SPL',
     'Description' => 'Speaker Layout Command'
@@ -966,7 +970,7 @@ s -> Shuffle Status: -: Off, S: All , A: Album, F: Folder' => 'prs',
   '"SWL" - Subwoofer (temporary) Level Command' => {
     'Arguments' => {
       'LEVEL + Key' => 'UP',
-      'LEVEL ... KEY' => 'DOWN',
+      'LEVEL – KEY' => 'DOWN',
       'gets the Subwoofer Level' => 'QSTN',
       'sets Subwoofer Level -15dB - 0dB - +12dB' => '-F-00-+C'
     },
@@ -1013,7 +1017,7 @@ s -> Shuffle Status: -: Off, S: All , A: Album, F: Folder' => 'prs',
   '"TPS" - TP Scan Command (RDS Model Only)' => {
     'Arguments' => {
       'Finish TP Scan' => 'ENTER',
-      'Start TP Scan (When Don\'t Have Parameter)' => ''
+      'Start TP Scan (When Don’t Have Parameter)' => ''
     },
     'Command' => 'TPS',
     'Description' => 'TP Scan Command (RDS Model Only)'
@@ -1067,7 +1071,7 @@ put 0 in the first two digits of nnnnn at SR' => 'nnnnn',
       'DAB Multiplex Band ID(mmm) & Freq(nnnn.nnMHz) Info' => 'MF:mmm/nnnn.nnMHz',
       'DAB Multiplex Name (9 letters)' => 'MN:nnnnnnnnn',
       'DAB Program Type (8 letters)' => 'PT:nnnnnnnn',
-      'gets & dispaly DAB Infomation Wrap-Around Up' => 'UP',
+      'gets & dispaly DAB Information Wrap-Around Up' => 'UP',
       'gets & display DAB Bitrate & Audio Type' => 'AT',
       'gets & display DAB Multicast Band & Freq Info' => 'MF',
       'gets & display DAB Multicast Name' => 'MN',
@@ -1130,7 +1134,7 @@ put 0 in the first two digits of nnnnn at SR' => 'nnnnn',
       'HD Radio Tuner Status (3 bytes)
 mm -> 00 not HD, 01 HD
 nn -> current Program 01-08
-oo -> receivable Program (8 bits are represented in hexadecimal notation. Each bit shows receivable or not.) ' => 'mmnnoo',
+oo -> receivable Program (8 bits are represented in hexadecimal notation. Each bit shows receivable or not.)' => 'mmnnoo',
       'gets the HD Radio Tuner Status' => 'QSTN'
     },
     'Command' => 'UHS',
@@ -1250,7 +1254,7 @@ oo -> receivable Program (8 bits are represented in hexadecimal notation. Each b
   },
   '"ZVL" - Zone2 Volume Command' => {
     'Arguments' => {
-      'Volume Level 0 ... 100 ( In hexadecimal representation)' => '00-64',
+      'Volume Level 0 – 100 ( In hexadecimal representation)' => '00-64',
       'gets the Volume Level' => 'QSTN',
       'sets Volume Level Down' => 'DOWN',
       'sets Volume Level Up' => 'UP'

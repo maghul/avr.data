@@ -1,0 +1,42 @@
+$$device{'TX-RZ700'} = {
+  '"CTV" - TV Operation Command (via RIHD)' => {
+    'Arguments' => {
+      '0' => '0',
+      '1' => '1',
+      '2' => '2',
+      '3' => '3',
+      '4' => '4',
+      '5' => '5',
+      '6' => '6',
+      '7' => '7',
+      '8' => '8',
+      '9' => '9',
+      'A for CEC US:R,EU:R,JP:B' => 'A',
+      'B for CEC US:G,EU:G,JP:R' => 'B',
+      'C for CEC US:B,EU:Y,JP:G' => 'C',
+      'CH Down' => 'CHDN',
+      'CH Up' => 'CHUP',
+      'Clear' => 'CLEAR',
+      'Cursor Down' => 'DOWN',
+      'Cursor Left' => 'LEFT',
+      'Cursor Right' => 'RIGHT',
+      'Cursor Up' => 'UP',
+      'D for CEC US:Y,EU:B,JP:Y' => 'D',
+      'Display' => 'DISP',
+      'Enter' => 'ENTER',
+      'Guide / Top Menu' => 'GUIDE',
+      'Input' => 'INPUT',
+      'Muting' => 'MUTE',
+      'Power' => 'POWER',
+      'PowerOn' => 'PWRON',
+      'Previous' => 'PREV',
+      'Return' => 'RETURN',
+      'Setup' => 'SETUP',
+      'Standby' => 'PWROFF',
+      'Volume Down' => 'VLDN',
+      'Volume Up' => 'VLUP'
+    },
+    'Command' => 'CTV',
+    'Description' => 'TV Operation Command (via RIHD)'
+  }
+};

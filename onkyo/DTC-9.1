@@ -42,17 +42,17 @@ $$device{'DTC-9.1'} = {
     'Arguments' => {
       'gets The Listening Mode' => 'QSTN',
       'sets ALL CH STEREO' => '0C',
-      'sets DIRECT ' => '01',
+      'sets DIRECT' => '01',
       'sets ENHANCED 7/ENHANCE       Game-Sports' => '0E',
       'sets Listening Mode Wrap-Around Down' => 'DOWN',
       'sets Listening Mode Wrap-Around Up' => 'UP',
-      'sets MONO ' => '0F',
+      'sets MONO' => '0F',
       'sets MONO MOVIE' => '07',
       'sets ORCHESTRA' => '08',
       'sets STEREO' => '00',
       'sets STUDIO-MIX' => '0A',
       'sets SURROUND' => '02',
-      'sets THEATER-DIMENSIONAL ' => '0D',
+      'sets THEATER-DIMENSIONAL' => '0D',
       'sets THX' => '04',
       'sets TV LOGIC' => '0B',
       'sets UNPLUGGED' => '09'
@@ -73,7 +73,7 @@ $$device{'DTC-9.1'} = {
   },
   '"MVL" - Master Volume Command' => {
     'Arguments' => {
-      'Volume Level 0 ... 100 ( In hexadecimal representation)' => '00-64',
+      'Volume Level 0 – 100 ( In hexadecimal representation)' => '00-64',
       'gets the Volume Level' => 'QSTN',
       'sets Volume Level Down' => 'DOWN',
       'sets Volume Level Up' => 'UP'
@@ -106,7 +106,7 @@ $$device{'DTC-9.1'} = {
   },
   '"PTS" - PTY Scan Command (RDS Model Only)' => {
     'Arguments' => {
-      'sets PTY No 0 - 30 ( In hexadecimal representation)' => '00-1E'
+      'sets PTY No 1 - 29 ( In hexadecimal representation)' => '01-1D'
     },
     'Command' => 'PTS',
     'Description' => 'PTY Scan Command (RDS Model Only)'
@@ -204,7 +204,7 @@ $$device{'DTC-9.1'} = {
   },
   '"TPS" - TP Scan Command (RDS Model Only)' => {
     'Arguments' => {
-      'Start TP Scan (When Don\'t Have Parameter)' => ''
+      'Start TP Scan (When Don’t Have Parameter)' => ''
     },
     'Command' => 'TPS',
     'Description' => 'TP Scan Command (RDS Model Only)'
