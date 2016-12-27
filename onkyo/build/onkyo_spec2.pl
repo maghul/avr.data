@@ -63,6 +63,8 @@ for my $worksheet ( $workbook->worksheets() ) {
 	    last unless $cell;
 
 	    my $device= $cell->value();
+	    $device=~ s/&/ /g;
+	    $device=~ s/#10;/ /g;
 	    $device=~ s/TX-/ TX-/g;
 	    $device=~ s/D TX-/ DTX-/g;
 	    $device=~ s/DTR-/ DTR-/g;
@@ -78,7 +80,7 @@ for my $worksheet ( $workbook->worksheets() ) {
 	    $device=~ s/TX-NR5000ETX-NA1000/TX-NR5000E TX-NA1000/g;
 
 	    if ( $device ) {
-#		print "DEVICE $col --> '$device'\n";
+		print "DEVICE $col --> '$device'\n";
 		$$devices[$col]= $device;
 	    } else {
 		    last;
@@ -92,9 +94,11 @@ for my $worksheet ( $workbook->worksheets() ) {
 	    my $cell= $worksheet->get_cell( $row, 0 );
 	    my $cmd= $cell?$cell->value():"None";
 #	    print "cmd: $cmd\n";
-	    if ( $cmd=~/\s*\"[A-Z0-9]{3,3}\"\s*-\s*/ ) {
+	    if (( $cmd=~/\s*\"[A-Z0-9]{3,3}\"\s*-\s*/ ) ||
+	        ( $cmd=~/\s*&quot;[A-Z0-9]{3,3}&quot;\s*-\s*/ )) {
 		$cmd =~ s/^\s*//;
 		$cmd =~ s/\s*$//;
+		$cmd =~ s/&quot;/\"/msg;
 		print "Base Command '$cmd'\n";
 		$base= $cmd;
 		$base_cmd= $cmd;
@@ -116,16 +120,21 @@ for my $worksheet ( $workbook->worksheets() ) {
 		$descr =~ s/&gt;/>/msg;
 		$descr =~ s/&lt;/</msg;
 		$descr =~ s/&amp;/&/msg;
+		$descr =~ s/&quot;/\"/msg;
 		$descr =~ s/\r\n/\n/sg;
 		$descr =~ s/["\x{201c}\x{201d}]//g;  # Strip quotes
 		$descr =~ s/\205/.../msg;
 		$descr =~ s/\223(.*)\224/$1/msg;
 		$descr =~ s/\223([^\224]*)\224/$1/msg;
+		$descr =~ s/&#10;/\n/msg;
+		$descr =~ s/&apos;/'/msg;
 		
 		$cmd =~ s/&gt;/>/msg;
 		$cmd =~ s/&lt;/</msg;
 		$cmd =~ s/&amp;/&/msg;
 		$cmd =~ s/\205/.../msg;
+		$cmd =~ s/&quot;//msg;
+		$cmd =~ s/&apos;/'/msg;
 
 		print "   NitWit Command '$cmd' --> '$descr'\n";
 		$cmd =~ s/\223([^\224]*)\224/$1/msg;
