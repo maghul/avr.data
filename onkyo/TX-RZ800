@@ -1,4 +1,20 @@
 $$device{'TX-RZ800'} = {
+  '"AAL" - Airplay Album Name Info (Airplay Model Only)' => {
+    'Arguments' => {
+      'NET/USB Album Name (variable-length, 64 Unicode letters [UTF-8 encoded] max , for Network Control only)' => 'nnnnnnn',
+      'gets iPod Album Name' => 'QSTN'
+    },
+    'Command' => 'AAL',
+    'Description' => 'Airplay Album Name Info (Airplay Model Only)'
+  },
+  '"AAT" - Airplay Artist Name Info (Airplay Model Only)' => {
+    'Arguments' => {
+      'NET/USB Artist Name (variable-length, 64 Unicode letters [UTF-8 encoded] max , for Network Control only)' => 'nnnnnnnnnn',
+      'gets iPod Artist Name' => 'QSTN'
+    },
+    'Command' => 'AAT',
+    'Description' => 'Airplay Artist Name Info (Airplay Model Only)'
+  },
   '"AEQ" - AccuEQ' => {
     'Arguments' => {
       'gets The AccuEQ State' => 'QSTN',
@@ -19,6 +35,33 @@ $$device{'TX-RZ800'} = {
     },
     'Command' => 'AMT',
     'Description' => 'Audio Muting Command'
+  },
+  '"AST" - Airplay Play Status (Airplay Model Only)' => {
+    'Arguments' => {
+      'NET/USB Play Status (3 letters)
+p -> Play Status: S: STOP, P: Play, p: Pause
+r -> Repeat Status: -: Off
+s -> Shuffle Status: -: Off' => 'prs',
+      'gets the Net/USB Status' => 'QSTN'
+    },
+    'Command' => 'AST',
+    'Description' => 'Airplay Play Status (Airplay Model Only)'
+  },
+  '"ATI" - Airplay Title Name (Airplay Model Only)' => {
+    'Arguments' => {
+      'NET/USB Title Name (variable-length, 64 Unicode letters [UTF-8 encoded] max , for Network Control only)' => 'nnnnnnnnnn',
+      'gets HD Radio Title' => 'QSTN'
+    },
+    'Command' => 'ATI',
+    'Description' => 'Airplay Title Name (Airplay Model Only)'
+  },
+  '"ATM" - Airplay Time Info (Airplay Model Only)' => {
+    'Arguments' => {
+      'NET/USB Time Info (Elapsed time/Track Time Max 99:59)' => 'mm:ss/mm:ss',
+      'gets iPod Time Info' => 'QSTN'
+    },
+    'Command' => 'ATM',
+    'Description' => 'Airplay Time Info (Airplay Model Only)'
   },
   '"AVS" - A/V Sync' => {
     'Arguments' => {
@@ -510,6 +553,30 @@ xxxxxxxxxxxxxx -> Jacket/Album Art Data (valiable length, 1024 ASCII HEX letters
     'Command' => 'NJA',
     'Description' => 'NET/USB Jacket Art (When Jacket Art is available and Output for Network Control Only)'
   },
+  '"NKY" - NET Keyboard(for Network Control Only)' => {
+    'Arguments' => {
+      'set Keyboard Input letter
+nnnnnnnn is variable-length, 128 Unicode letters [UTF-8 encoded] max' => 'nnnnnnnnn',
+      'waiting Keyboard Input
+ll -> category
+ 00: Off ( Exit Keyboard Input )
+ 01: User Name
+ 02: Password
+ 03: Artist Name
+ 04: Album Name
+ 05: Song Name
+ 06: Station Name
+ 07: Tag Name
+ 08: Artist or Song
+ 09: Episode Name
+ 0A: Pin Code (some digit Number [0-9])
+ 0B: User Name (available ISO 8859-1 character set)
+ 0C: Password (available ISO 8859-1 character set)
+ 0D: URL' => 'll'
+    },
+    'Command' => 'NKY',
+    'Description' => 'NET Keyboard(for Network Control Only)'
+  },
   '"NLA" - NET/USB List Info(All item, need processing XML data, for Network Control Only)' => {
     'Arguments' => {
       'select the listed item (from Network Control Only)
@@ -578,6 +645,37 @@ when t = I,
   },
   '"NLT" - NET/USB List Title Info(for Network Control Only)' => {
     'Arguments' => {
+      'NET/USB List Title Info
+xx : Service Type
+ 00 : DLNA, 01 : Favorite, 02 : vTuner, 03 : SiriusXM, 04 : Pandora, 05 : Rhapsody, 06 : Last.fm,
+ 07 : Napster, 08 : Slacker, 09 : Mediafly, 0A : Spotify, 0B : AUPEO!, 0C : radiko, 0D : e-onkyo,
+ 0E : TuneIn Radio, 0F : MP3tunes, 10 : Simfy, 11:Home Media, 12:Deezer, 13:iHeartRadio,
+ F0 : USB Front, F1 : USB Rear, F2 : Internet Radio, F3 : NET, FF : None
+u : UI Type
+ 0 : List, 1 : Menu, 2 : Playback, 3 : Popup, 4 : Keyboard, 5 : Menu List
+y : Layer Info
+ 0 : NET TOP, 1 : Service Top,DLNA/USB/iPod Top, 2 : under 2nd Layer
+cccc : Current Cursor Position (HEX 4 letters)
+iiii : Number of List Items (HEX 4 letters)
+ll : Number of Layer(HEX 2 letters)
+rr : Reserved (2 leters)
+aa : Icon on Left of Title Bar
+ 00 : Internet Radio, 01 : Server, 02 : USB, 03 : iPod, 04 : DLNA, 05 : WiFi, 06 : Favorite
+ 10 : Account(Spotify), 11 : Album(Spotify), 12 : Playlist(Spotify), 13 : Playlist-C(Spotify)
+ 14 : Starred(Spotify), 15 : What\'s New(Spotify), 16 : Track(Spotify), 17 : Artist(Spotify)
+ 18 : Play(Spotify), 19 : Search(Spotify), 1A : Folder(Spotify)
+ FF : None
+bb : Icon on Right of Title Bar
+ 00 : DLNA, 01 : Favorite, 02 : vTuner, 03 : SiriusXM, 04 : Pandora, 05 : Rhapsody, 06 : Last.fm,
+ 07 : Napster, 08 : Slacker, 09 : Mediafly, 0A : Spotify, 0B : AUPEO!, 0C : radiko, 0D : e-onkyo,
+ 0E : TuneIn Radio, 0F : MP3tunes, 10 : Simfy, 11:Home Media, 12:Deezer, 13:iHeartRadio,
+ FF : None
+ss : Status Info
+ 00 : None, 01 : Connecting, 02 : Acquiring License, 03 : Buffering
+ 04 : Cannot Play, 05 : Searching, 06 : Profile update, 07 : Operation disabled
+ 08 : Server Start-up, 09 : Song rated as Favorite, 0A : Song banned from station,
+ 0B : Authentication Failed, 0C : Spotify Paused(max 1 device), 0D : Track Not Available, 0E : Cannot Skip
+nnn...nnn : Character of Title Bar (variable-length, 64 Unicode letters [UTF-8 encoded] max)' => 'xxuycccciiiillrraabbssnnn...nnn',
       'NET/USB List Title Info
 xx : Service Type
  00 : DLNA, 01 : Favorite, 02 : vTuner, 03 : SiriusXM, 04 : Pandora, 05 : Rhapsody, 06 : Last.fm,
@@ -653,6 +751,34 @@ ii-> Service icon
     },
     'Command' => 'NPR',
     'Description' => 'Internet Radio Preset Command'
+  },
+  '"NPU" - NET Popup Message(for Network Control Only)' => {
+    'Arguments' => {
+      'x -> Popup Display Type
+ \'T\': Popup text is top
+ \'B\': Popup text is bottom
+ \'L\': Popup text is list format
+
+aaa...aaa -> Popup Title, Massage
+ when x = \'T\' or \'B\'
+    Top Title [0x00] Popup Title [0x00] Popup Message [0x00]
+    (valiable-length Unicode letter [UTF-8 encoded] )
+
+ when x = \'L\'
+    Top Title [0x00] Item Title 1 [0x00] Item Parameter 1 [0x00] ... [0x00] Item Title 6 [0x00] Item Parameter 6 [0x00]
+    (valiable-length Unicode letter [UTF-8 encoded] )
+
+y -> Cursor Position on button
+ \'0\' : Button is not Displayed
+ \'1\' : Cursor is on the button 1
+ \'2\' : Cursor is on the button 2
+
+bbb...bbb -> Text of Button
+    Text of Button 1 [0x00] Text of Button 2 [0x00]
+    (valiable-length Unicode letter [UTF-8 encoded] )' => 'xaaa...aaaybbb...bbb'
+    },
+    'Command' => 'NPU',
+    'Description' => 'NET Popup Message(for Network Control Only)'
   },
   '"NPZ" - Internet Radio Preset Command (Network Model Only)' => {
     'Arguments' => {

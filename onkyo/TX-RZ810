@@ -1,4 +1,4 @@
-$$device{'TX-NR646'} = {
+$$device{'TX-RZ810'} = {
   '"AAL" - Airplay Album Name Info (Airplay Model Only)' => {
     'Arguments' => {
       'NET/USB Album Name (variable-length, 64 Unicode letters [UTF-8 encoded] max , for Network Control only)' => 'nnnnnnn',
@@ -77,6 +77,16 @@ nnn : value; If set 100msec, nnn=100' => 'snnn',
     },
     'Command' => 'AVS',
     'Description' => 'A/V Sync'
+  },
+  '"CCM" - HDMI CEC Control Monitor' => {
+    'Arguments' => {
+      'gets Control Monitor' => 'QSTN',
+      'sets Control Monitor Wrap-Around Up' => 'UP',
+      'sets Main' => '01',
+      'sets Sub' => '10'
+    },
+    'Command' => 'CCM',
+    'Description' => 'HDMI CEC Control Monitor'
   },
   '"CDS" - Command for Docking Station via RI' => {
     'Arguments' => {
@@ -400,8 +410,14 @@ i...i: Picture Mode' => 'a..a,b..b,c...c,d..d,e...e,f...f,g...g,h...h,i...i,'
       'sets Music (when Genre Contorl is Enable in Japan Model)' => '26',
       'sets Neo:6 Cinema/Neo:X Cinema     DTS:X/Neural:X' => '82',
       'sets Neo:6 Music/Neo:X Music' => '83',
+      'sets Neo:6/Neo:X THX Cinema     DTS Neural:X THX Cinema' => '85',
+      'sets Neo:6/Neo:X THX Games     DTS Neural:X THX Games' => '8A',
+      'sets Neo:6/Neo:X THX Music     DTS Neural:X THX Music' => '8C',
       'sets ORCHESTRA' => '08',
       'sets PLII/PLIIx Movie      Dolby Atmos/Dolby Surround' => '80',
+      'sets PLII/PLIIx THX Cinema       Dolby Surround THX Cinema' => '84',
+      'sets PLII/PLIIx THX Games     Dolby Surround THX Games' => '89',
+      'sets PLII/PLIIx THX Music     Dolby Surround THX Music' => '8B',
       'sets PURE AUDIO' => '11',
       'sets STEREO' => '00',
       'sets STUDIO-MIX' => '0A',
@@ -410,8 +426,17 @@ i...i: Picture Mode' => 'a..a,b..b,c...c,d..d,e...e,f...f,g...g,h...h,i...i,'
       'sets Stage (when Genre Control is Enable in Japan Model)' => '23',
       'sets Straight Decode*1' => '40',
       'sets THEATER-DIMENSIONAL' => '0D',
+      'sets THX' => '04',
+      'sets THX Cinema' => '42',
+      'sets THX Games' => '45',
+      'sets THX Games Mode,THX U2/S2/I/S Games' => '52',
+      'sets THX Music' => '44',
+      'sets THX MusicMode,THX U2/S2/I/S Music' => '51',
+      'sets THX Surround EX' => '43',
+      'sets THX U2/S2/I/S Cinema/Cinema2' => '50',
       'sets TV LOGIC' => '0B',
-      'sets UNPLUGGED' => '09'
+      'sets UNPLUGGED' => '09',
+      'sets Whole House Mode' => '1F'
     },
     'Command' => 'LMD',
     'Description' => 'Listening Mode Command'
@@ -450,10 +475,12 @@ i...i: Picture Mode' => 'a..a,b..b,c...c,d..d,e...e,f...f,g...g,h...h,i...i,'
   },
   '"MVL" - Master Volume Command' => {
     'Arguments' => {
-      'Volume Level 0 – 80 ( In hexadecimal representation)' => '00-50',
+      'Volume Level 0 – 100 ( In hexadecimal representation)' => '00-64',
       'gets the Volume Level' => 'QSTN',
       'sets Volume Level Down' => 'DOWN',
-      'sets Volume Level Up' => 'UP'
+      'sets Volume Level Down 1dB Step' => 'DOWN1',
+      'sets Volume Level Up' => 'UP',
+      'sets Volume Level Up 1dB Step' => 'UP1'
     },
     'Command' => 'MVL',
     'Description' => 'Master Volume Command'
@@ -970,15 +997,15 @@ t : Update Type
     'Command' => 'PWR',
     'Description' => 'System Power Command'
   },
-  '"RAS" - Cinema Filter Command' => {
+  '"RAS" - Re-EQ Command' => {
     'Arguments' => {
-      'gets The Cinema Filter State' => 'QSTN',
-      'sets Cinema Filter Off' => '00',
-      'sets Cinema Filter On' => '01',
-      'sets Cinema Filter State Wrap-Around Up' => 'UP'
+      'gets The Re-EQ State' => 'QSTN',
+      'sets Re-EQ Off' => '00',
+      'sets Re-EQ On' => '01',
+      'sets Re-EQ State Wrap-Around Up' => 'UP'
     },
     'Command' => 'RAS',
-    'Description' => 'Cinema Filter Command'
+    'Description' => 'Re-EQ Command'
   },
   '"RDS" - RDS Information Command (RDS Model Only)' => {
     'Arguments' => {
@@ -1033,6 +1060,7 @@ t : Update Type
       'sets VIDEO2    CBL/SAT' => '01',
       'sets VIDEO3    GAME/TV    GAME     GAME1' => '02',
       'sets VIDEO4    AUX1(AUX)' => '03',
+      'sets VIDEO5    AUX2                          GAME2' => '04',
       'sets VIDEO6    PC' => '05'
     },
     'Command' => 'SLI',
@@ -1068,10 +1096,22 @@ t : Update Type
       'sets USB/USB(Front)' => '29',
       'sets VIDEO2    CBL/SAT' => '01',
       'sets VIDEO3    GAME/TV    GAME     GAME1' => '02',
+      'sets VIDEO4    AUX1(AUX)' => '03',
+      'sets VIDEO5    AUX2                          GAME2' => '04',
       'sets VIDEO6    PC' => '05'
     },
     'Command' => 'SLZ',
     'Description' => 'ZONE2 Selector Command'
+  },
+  '"SPL" - Speaker Layout Command' => {
+    'Arguments' => {
+      'gets the Speaker State' => 'QSTN',
+      'sets Height1 Speakers' => 'H1',
+      'sets Speaker Switch Wrap-Around' => 'UP',
+      'sets SurrBack Speaker' => '”SB'
+    },
+    'Command' => 'SPL',
+    'Description' => 'Speaker Layout Command'
   },
   '"SWL" - Subwoofer (temporary) Level Command' => {
     'Arguments' => {
@@ -1147,6 +1187,16 @@ put 0 in the first two digits of nnnnn at SR' => 'nnnnn',
     'Command' => 'TUZ',
     'Description' => 'Tuning Command'
   },
+  '"ZBL" - Zone2 Balance Command' => {
+    'Arguments' => {
+      'gets Zone2 Balance' => 'QSTN',
+      'sets Balance Down (to L 2 Step)' => 'DOWN',
+      'sets Balance Up (to R 2 Step)' => 'UP',
+      'sets Zone2 Balance (xx is -A...00...+A[L+10...0...R+10 2 step]' => 'xx'
+    },
+    'Command' => 'ZBL',
+    'Description' => 'Zone2 Balance Command'
+  },
   '"ZMT" - Zone2 Muting Command' => {
     'Arguments' => {
       'gets the Zone2 Muting Status' => 'QSTN',
@@ -1166,9 +1216,22 @@ put 0 in the first two digits of nnnnn at SR' => 'nnnnn',
     'Command' => 'ZPW',
     'Description' => 'Zone2 Power Command'
   },
+  '"ZTN" - Zone2 Tone Command' => {
+    'Arguments' => {
+      'gets Zone2 Tone (BxxTxx)' => 'QSTN',
+      'sets Bass Down (2 Step)' => 'BDOWN',
+      'sets Bass Up (2 Step)' => 'BUP',
+      'sets Treble Down (2 Step)' => 'TDOWN',
+      'sets Treble Up (2 Step)' => 'TUP',
+      'sets Zone2 Bass (xx is -A...00...+A[-10...0...+10 2 step]' => 'Bxx',
+      'sets Zone2 Treble (xx is -A...00...+A[-10...0...+10 2 step]' => 'Txx'
+    },
+    'Command' => 'ZTN',
+    'Description' => 'Zone2 Tone Command'
+  },
   '"ZVL" - Zone2 Volume Command' => {
     'Arguments' => {
-      'Volume Level 0 – 80 ( In hexadecimal representation)' => '00-50',
+      'Volume Level 0 – 100 ( In hexadecimal representation)' => '00-64',
       'gets the Volume Level' => 'QSTN',
       'sets Volume Level Down' => 'DOWN',
       'sets Volume Level Up' => 'UP'
