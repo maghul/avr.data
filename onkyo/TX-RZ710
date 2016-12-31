@@ -475,7 +475,7 @@ i...i: Picture Mode' => 'a..a,b..b,c...c,d..d,e...e,f...f,g...g,h...h,i...i,'
   },
   '"MVL" - Master Volume Command' => {
     'Arguments' => {
-      'Volume Level 0 – 100 ( In hexadecimal representation)' => '00-64',
+      'Volume Level 0 – 82 halfsteps ( In hexadecimal representation)' => '00-A0',
       'gets the Volume Level' => 'QSTN',
       'sets Volume Level Down' => 'DOWN',
       'sets Volume Level Down 1dB Step' => 'DOWN1',
@@ -1230,7 +1230,7 @@ put 0 in the first two digits of nnnnn at SR' => 'nnnnn',
   },
   '"ZVL" - Zone2 Volume Command' => {
     'Arguments' => {
-      'Volume Level 0 – 100 ( In hexadecimal representation)' => '00-64',
+      'Volume Level 0 – 82 halfsteps ( In hexadecimal representation)' => '00-A0',
       'gets the Volume Level' => 'QSTN',
       'sets Volume Level Down' => 'DOWN',
       'sets Volume Level Up' => 'UP'
